@@ -14,16 +14,16 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "firebase/php-jwt": "^5.2",
-        "guzzlehttp/guzzle": "^6.5",
-        "phpseclib/phpseclib": "^2.0"
+        "cubequence/framework": "dev-master"
     },
     "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
         "sort-packages": true
     },
     "autoload": {
         "psr-4": {
-            "CubeQuence\\": "src/CubeQuence/"
+            "App\\": "app/"
         }
     },
     "minimum-stability": "dev",
