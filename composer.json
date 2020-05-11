@@ -1,0 +1,35 @@
+{
+    "name": "cubequence/cubequence",
+    "description": "The CubeQuence Framework",
+    "keywords": [
+        "framework",
+        "cubequence"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luca Castelnuovo",
+            "email": "luca@castelnuovo.xyz"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "firebase/php-jwt": "^5.2",
+        "guzzlehttp/guzzle": "^6.5",
+        "phpseclib/phpseclib": "^2.0"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "CubeQuence\\": "src/CubeQuence/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/Luca-Castelnuovo/CubeQuence/issues",
+        "source": "https://github.com/Luca-Castelnuovo/CubeQuence"
+    }
+}
