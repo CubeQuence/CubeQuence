@@ -1,14 +1,4 @@
-# PHP Helpers
-
-PHP helpers
-
-## Install
-
-```bash
-composer require lucacastelnuovo/php-helpers
-```
-
-## Packages
+# CubeQuence Helpers
 
 #### JWT
 
@@ -16,7 +6,7 @@ composer require lucacastelnuovo/php-helpers
 <?php
 
 use Exception;
-use lucacastelnuovo\Helpers\JWT;
+use CubeQuence\Helpers\JWT;
 
 $keypair = JWT::generateKeys(2048);
 
@@ -51,7 +41,7 @@ exit;
 <?php
 
 use Exception;
-use lucacastelnuovo\Helpers\AppsClient;
+use CubeQuence\Helpers\AppsClient;
 
 $authProvider = new AppsClient([
     'app_id' => 'xyz123', // The gumroad ID for the app
@@ -79,7 +69,7 @@ if (isset($_GET['code'])) {
 ```php
 <?php
 
-use lucacastelnuovo\Helpers\Session;
+use CubeQuence\Helpers\Session;
 
 // Set session var
 echo Session::set('foo', 'Hello World!'); // returns input
@@ -99,7 +89,7 @@ Session::destroy();
 ```php
 <?php
 
-use lucacastelnuovo\Helpers\Str;
+use CubeQuence\Helpers\Str;
 
 Str::contains('very long string', 'long'); // returns bool
 
@@ -115,7 +105,7 @@ echo Str::random(32); // return random string, param defines length
 ```php
 <?php
 
-use lucacastelnuovo\Helpers\Arr;
+use CubeQuence\Helpers\Arr;
 
 $array = [
     'foo' => 'bar',
@@ -137,7 +127,7 @@ echo Arr::get($array, 'abc.first', 'fallback_value');
 ```php
 <?php
 
-use lucacastelnuovo\Helpers\Captcha;
+use CubeQuence\Helpers\Captcha;
 
 $secret = '123'; // site secret
 
