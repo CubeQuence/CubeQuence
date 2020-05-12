@@ -1,6 +1,6 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="/assets/js/index.js"></script>
+<script src="/assets/js/materialize.min.js"></script>
+<script src="/assets/js/axios.min.js"></script>
+<script src="/assets/js/utilities.js"></script>
 
 {% if analytics.enabled %}
     <script
@@ -8,6 +8,6 @@
         src="https://analytics.lucacastelnuovo.nl/tracker.js"
         data-ackee-server="https://analytics.lucacastelnuovo.nl"
         data-ackee-domain-id="{{ analytics.domainId }}"
-        data-ackee-opts="{{ analytics.options }}">
+        data-ackee-opts='{{ analytics.options }}'>
     </script>
 {% endif %}

@@ -1,0 +1,50 @@
+.modal {
+  max-width: 350px;
+  overflow-y: unset;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mt-0 {
+  margin-top: 0;
+}
+.mr-7 {
+  margin: 7px 0;
+}
+.blue-icon {
+  color: #2962ff;
+}
+.full-width {
+  max-width: 100%;
+  width: 100%;
+}
+.btn.modal-trigger {
+  margin-bottom: 5px;
+}
+.input-field input:focus,
+.input-field textarea:focus {
+  border-bottom: 1px solid #2962ff !important;
+  box-shadow: 0 1px 0 0 #2962ff !important;
+}
+.input-field input:focus + label,
+.input-field textarea:focus + label {
+  color: #2962ff !important;
+}
+.input-field input.valid,
+.input-field textarea.valid {
+  border-bottom: 1px solid #2962ff !important;
+  box-shadow: 0 1px 0 0 #2962ff !important;
+}
+.input-field input.valid + label,
+.input-field textarea.valid + label {
+  color: #2962ff !important;
+}
+.input-field input.invalid,
+.input-field textarea.invalid {
+  border-bottom: 1px solid #f44336 !important;
+  box-shadow: 0 1px 0 0 #f44336 !important;
+}
+.input-field input.invalid + label,
+.input-field textarea.invalid + label {
+  color: #f44336 !important;
+}
