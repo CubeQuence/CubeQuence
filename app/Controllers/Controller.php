@@ -2,11 +2,10 @@
 
 namespace App\Controllers;
 
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
-use Zend\Diactoros\Response\RedirectResponse;
-use Zend\Diactoros\Response\HtmlResponse;
-use Zend\Diactoros\Response\JsonResponse;
+use CQ\Response\Twig;
+use CQ\Response\Html;
+use CQ\Response\Json;
+use CQ\Response\Redirect;
 
 class Controller
 {
@@ -21,8 +20,9 @@ class Controller
     public function __construct()
     {
         // Start twig engine
-        $loader = new FilesystemLoader('../views');
-        $this->twig = new Environment($loader /* , ['cache' => '../storage/views'] */);
+        $twig = new Twig(false); // TODO: based on Environment enable cache or not
+        $this->twig = $twig->get();
+        $this->twig->addGlobal('app', config('app'));
         $this->twig->addGlobal('analytics', config('analytics'));
     }
 
@@ -32,11 +32,11 @@ class Controller
      * @param string $to
      * @param integer $code optional
      * 
-     * @return RedirectResponse
+     * @return Redirect
      */
     protected function redirect($to, $code = 302)
     {
-        return new RedirectResponse($to, $code);
+        return new Redirect($to, $code);
     }
 
     /**
@@ -46,11 +46,11 @@ class Controller
      * @param array $parameters
      * @param integer $code optional
      * 
-     * @return HtmlResponse
+     * @return Html
      */
     protected function respond($view, $parameters = [], $code = 200)
     {
-        return new HtmlResponse(
+        return new Html(
             $this->twig->render(
                 $view,
                 $parameters
@@ -65,11 +65,11 @@ class Controller
      * @param array $data
      * @param integer $code optional
      * 
-     * @return JsonResponse
+     * @return Json
      */
     protected function respondJson($data = [], $code = 200)
     {
-        return new JsonResponse([
+        return new Json([
             'success' => true,
             'data' => $data
         ], $code);
@@ -82,11 +82,11 @@ class Controller
      * @param string $detail optional
      * @param integer $code optional
      * 
-     * @return JsonResponse
+     * @return Json
      */
     protected function respondJsonError($title, $detail = null, $code = 400)
     {
-        return new JsonResponse([
+        return new Json([
             'success' => false,
             'errors' => [
                 'status' => $code,
