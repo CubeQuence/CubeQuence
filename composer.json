@@ -28,6 +28,14 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "migrate": "composer phinx migrate",
+        "phinx": "vendor/bin/phinx",
+        "seed": "composer phinx seed:run -v"
+    },
     "support": {
         "issues": "https://github.com/Luca-Castelnuovo/CubeQuence/issues",
         "source": "https://github.com/Luca-Castelnuovo/CubeQuence"
