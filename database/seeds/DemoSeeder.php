@@ -1,9 +1,9 @@
 <?php
 
-
 use Phinx\Seed\AbstractSeed;
+use CQ\DB\Seeder;
 
-class TemplatesSeeder extends AbstractSeed
+class DemoSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -15,7 +15,7 @@ class TemplatesSeeder extends AbstractSeed
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Seeder::create();
         $data = [];
 
         for ($i = 0; $i < 5; $i++) {
@@ -36,6 +36,6 @@ class TemplatesSeeder extends AbstractSeed
             ];
         }
 
-        $this->table('templates')->insert($data)->saveData();
+        $this->table('demo')->insert($data)->saveData();
     }
 }

@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Templates extends AbstractMigration
+class Demo extends AbstractMigration
 {
     /**
      * Change Method.
@@ -31,8 +31,8 @@ class Templates extends AbstractMigration
      */
     public function change()
     {
-        $templates = $this->table('templates', ['id' => false, 'primary_key' => 'id']);
-        $templates->addColumn('id', 'uuid')
+        $demo = $this->table('demo', ['id' => false, 'primary_key' => 'id']);
+        $demo->addColumn('id', 'uuid')
             ->addColumn('user_id', 'string', ['limit' => 64, 'null' => false])
             ->addColumn('name', 'string', ['limit' => 64, 'null' => false])
             ->addColumn('captcha_key', 'string', ['limit' => 64, 'null' => true])

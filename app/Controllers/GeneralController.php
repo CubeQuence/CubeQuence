@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use CQ\Helpers\Auth;
+use CQ\DB\DB;
 
 class GeneralController extends Controller
 {
