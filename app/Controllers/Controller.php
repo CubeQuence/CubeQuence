@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use CQ\Helpers\App;
+use CQ\Config\Config;
 use CQ\Response\Twig;
 use CQ\Response\Html;
 use CQ\Response\Json;
@@ -19,11 +21,10 @@ class Controller
      */
     public function __construct()
     {
-        // Start twig engine
-        $twig = new Twig(false); // TODO: based on Environment enable cache or not
+        $twig = new Twig(Config::get('cache.views') && !App::debug());
         $this->twig = $twig->get();
-        $this->twig->addGlobal('app', config('app'));
-        $this->twig->addGlobal('analytics', config('analytics'));
+        $this->twig->addGlobal('app', Config::get('app'));
+        $this->twig->addGlobal('analytics', Config::get('analytics'));
     }
 
     /**

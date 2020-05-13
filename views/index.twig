@@ -1,14 +1,34 @@
 {% extends "partials/base.twig" %}
-{% set title = "Welcome" %}
+{% set title = "Login" %}
 {% set navbarDisable = true %}
 
 {% block content %}
 <div class="row">
+    {% if message %}
+        <div class="col s12 m8 offset-m2 l4 offset-l4">
+            <div class="card-panel hoverable z-depth-2">
+                <span class="flow-text">
+                    {{ message }}
+                </span>
+            </div>
+        </div>
+    {% endif %}
     <div class="col s12 m8 offset-m2 l4 offset-l4">
         <div class="card">
             <div class="card-action blue accent-4 white-text">
                 <h3>Welcome to CubeQuence!</h3>
             </div>
+        </div>
+        <div class="card-content">
+            {% if logged_in %}
+                <a class="full-width waves-effect waves-light btn-large blue accent-4" href="/dashboard">
+                    Go to dashboard
+                </a>
+            {% else %}
+                <a class="full-width waves-effect waves-light btn-large" href="/auth/request">
+                    Sign in with apps
+                </a>
+            {% endif %}
         </div>
     </div>
 </div>
