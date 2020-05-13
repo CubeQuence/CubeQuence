@@ -1,23 +1,21 @@
 <?php
 
 use CQ\Routing\Route;
-use CQ\Routing\Router;
+use CQ\Routing\Middleware;
+use CQ\Middleware\Session;
 
-$router = new Router([
-    '404' => '/',
-    '500' => '/',
-]);
 Route::$router = $router->get();
-
+Middleware::$router = $router->get();
 
 Route::get('/', 'GeneralController@index');
+Route::get('/error/{code}', 'GeneralController@error');
 
-Route::get('/closure', function () {
-    return 'Closure as a controller';
+Middleware::create(['prefix' => '/auth'], function () {
+    Route::get('/request', 'AuthController@request');
+    Route::get('/callback', 'AuthController@callback');
+    Route::get('/logout', 'AuthController@logout');
 });
 
-function func()
-{
-    return 'Function as a controller';
-}
-Route::get('/function', 'func');
+Middleware::create(['middleware' => Session::class], function () {
+    Route::get('/dashboard', 'UserController@dashboard');
+});

@@ -18,17 +18,17 @@
             <div class="card-action blue accent-4 white-text">
                 <h3>Welcome to CubeQuence!</h3>
             </div>
-        </div>
-        <div class="card-content">
-            {% if logged_in %}
-                <a class="full-width waves-effect waves-light btn-large blue accent-4" href="/dashboard">
-                    Go to dashboard
-                </a>
-            {% else %}
-                <a class="full-width waves-effect waves-light btn-large" href="/auth/request">
-                    Sign in with apps
-                </a>
-            {% endif %}
+            <div class="card-content">
+                {% if logged_in %}
+                    <a class="full-width waves-effect waves-light btn-large blue accent-4" href="/dashboard">
+                        Go to dashboard
+                    </a>
+                {% else %}
+                    <a class="full-width waves-effect waves-light btn-large" href="/auth/request">
+                        Sign in with apps
+                    </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

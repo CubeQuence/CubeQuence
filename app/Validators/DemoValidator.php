@@ -2,9 +2,10 @@
 
 namespace App\Validators;
 
-use Respect\Validation\Validator as v;
+use CQ\Validators\Base;
+use CQ\Validators\Validator as v;
 
-class TemplateValidator extends ValidatorBase
+class DemoValidator extends Base
 {
     /**
      * Validate json submission
@@ -25,7 +26,7 @@ class TemplateValidator extends ValidatorBase
             ->attribute('email_subject', v::stringType()->length(1, 256))
             ->attribute('email_content', v::stringType()->length(1, 15000));
 
-        ValidatorBase::validate($v, $data);
+        self::validate($v, $data);
     }
 
     /**
@@ -47,7 +48,7 @@ class TemplateValidator extends ValidatorBase
             ->attribute('email_subject', v::stringType()->length(1, 256))
             ->attribute('email_content', v::stringType()->length(1, 15000));
 
-        ValidatorBase::validate($v, $data);
+        self::validate($v, $data);
     }
 
     /**
@@ -61,6 +62,6 @@ class TemplateValidator extends ValidatorBase
     {
         $v = v::attribute('allowed_origin', v::url()->length(1, 256));
 
-        ValidatorBase::validate($v, $data);
+        self::validate($v, $data);
     }
 }
