@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use Exception;
+use CQ\Helpers\App;
 use CQ\Helpers\Str;
 use CQ\Helpers\Session;
 use CQ\Apps\Client;
@@ -21,7 +22,8 @@ class AuthController extends Controller
     {
         $this->provider = new Client([
             'app_id' => Config::get('app.id'),
-            'app_url' => Config::get('app.url')
+            'app_url' => Config::get('app.url'),
+            'debug' => App::debug()
         ]);
     }
 
@@ -51,11 +53,11 @@ class AuthController extends Controller
         try {
             $data = $this->provider->getData($code, $_SERVER['REMOTE_ADDR'], $_SERVER['HTTP_USER_AGENT']);
         } catch (Exception $e) {
-            // var_dump($e->getMessage());exit;
             return $this->logout("token");
+            // var_dump($e->getMessage());exit;
         }
 
-        $id = Str::escape($data->sub); // Value is used in DB calls
+        $id = Str::escape($data->sub);
 
         return $this->login($id, $data->variant, $data->exp);
     }
@@ -78,10 +80,6 @@ class AuthController extends Controller
         Session::set('variant', $variant);
         Session::set('ip', $_SERVER['REMOTE_ADDR']);
         Session::set('expires', $expires);
-
-        if (!file_exists("users/{$id}")) {
-            mkdir("users/{$id}", 0770);
-        }
 
         if ($return_to) {
             return $this->redirect($return_to);
