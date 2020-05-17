@@ -8,6 +8,7 @@ use CQ\Helpers\Str;
 use CQ\Helpers\Session;
 use CQ\Apps\Client;
 use CQ\Config\Config;
+use CQ\Controllers\Controller;
 
 class AuthController extends Controller
 {

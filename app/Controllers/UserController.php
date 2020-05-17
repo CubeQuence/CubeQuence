@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use CQ\Controllers\Controller;
+
 class UserController extends Controller
 {
     /**

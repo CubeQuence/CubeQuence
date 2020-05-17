@@ -19,3 +19,10 @@ Middleware::create(['prefix' => '/auth'], function () {
 Middleware::create(['middleware' => Session::class], function () {
     Route::get('/dashboard', 'UserController@dashboard');
 });
+
+Middleware::create(['prefix' => '/demo', 'middleware' => Session::class], function () {
+    Route::get('/', 'DemoController@index');
+    Route::post('/', 'DemoController@create'); // TODO: add json middleware
+    Route::patch('/{id}', 'DemoController@update'); // TODO: add json middleware
+    Route::delete('/{id}', 'DemoController@delete');
+});
