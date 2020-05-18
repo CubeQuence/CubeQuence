@@ -6,9 +6,9 @@ use Exception;
 use CQ\DB\DB;
 use CQ\Helpers\UUID;
 use CQ\Controllers\Controller;
-use App\Validators\DemoValidator;
+use App\Validators\ExampleValidator;
 
-class DemoController extends Controller
+class ExampleController extends Controller
 {
     /**
      * List entries
@@ -17,7 +17,7 @@ class DemoController extends Controller
      */
     public function index()
     {
-        $demo = DB::select('demo', [
+        $example = DB::select('example', [
             'id',
             'string',
             'updated_at',
@@ -25,8 +25,8 @@ class DemoController extends Controller
         ], []);
 
         return $this->respondJson(
-            'Demo Entries',
-            $demo
+            'Example Entries',
+            $example
         );
     }
 
@@ -40,7 +40,7 @@ class DemoController extends Controller
     public function create($request)
     {
         try {
-            DemoValidator::create($request->data);
+            ExampleValidator::create($request->data);
         } catch (Exception $e) {
             return $this->respondJson(
                 'Provided data was malformed',
@@ -54,10 +54,10 @@ class DemoController extends Controller
             'string' => $request->data->string
         ];
 
-        DB::create('demo', $data);
+        DB::create('example', $data);
 
         return $this->respondJson(
-            'Demo Created',
+            'Example Created',
             $data
         );
     }
@@ -73,7 +73,7 @@ class DemoController extends Controller
     public function update($request, $id)
     {
         try {
-            DemoValidator::update($request->data);
+            ExampleValidator::update($request->data);
         } catch (Exception $e) {
             return $this->respondJson(
                 'Provided data was malformed',
@@ -82,14 +82,30 @@ class DemoController extends Controller
             );
         }
 
-        // get item based on id
-        // check if exists
+        $example = DB::get('example', ['string'], ['id' => $id]);
 
-        // update
-        $data = [];
+        if (!$example) {
+            return $this->respondJson(
+                'Example not found',
+                [],
+                404
+            );
+        }
+
+        $data = [
+            'string' => $request->data->string ?: $example['string']
+        ];
+
+        DB::update(
+            'example',
+            $data,
+            [
+                'id' => $id
+            ]
+        );
 
         return $this->respondJson(
-            'Demo Updated',
+            'Example Updated',
             $data
         );
     }
@@ -103,8 +119,8 @@ class DemoController extends Controller
      */
     public function delete($id)
     {
-        DB::delete('history',  ['id' => $id]);
+        DB::delete('example',  ['id' => $id]);
 
-        return $this->respondJson('Demo Deleted');
+        return $this->respondJson('Example Deleted');
     }
 }

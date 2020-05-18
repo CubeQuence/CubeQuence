@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Demo extends AbstractMigration
+class Example extends AbstractMigration
 {
     /**
      * Change Method.
@@ -31,8 +31,8 @@ class Demo extends AbstractMigration
      */
     public function change()
     {
-        $demo = $this->table('demo', ['id' => false, 'primary_key' => 'id']);
-        $demo->addColumn('id', 'uuid')
+        $example = $this->table('example', ['id' => false, 'primary_key' => 'id']);
+        $example->addColumn('id', 'uuid')
             ->addColumn('string', 'string', ['limit' => 64, 'null' => false])
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])

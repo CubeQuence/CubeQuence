@@ -5,7 +5,7 @@ namespace App\Validators;
 use CQ\Validators\v;
 use CQ\Validators\Validator;
 
-class DemoValidator extends Validator
+class ExampleValidator extends Validator
 {
     /**
      * Validate json submission

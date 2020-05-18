@@ -3,7 +3,7 @@
 use Phinx\Seed\AbstractSeed;
 use CQ\DB\Seeder;
 
-class DemoSeeder extends AbstractSeed
+class ExampleSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -27,6 +27,6 @@ class DemoSeeder extends AbstractSeed
             ];
         }
 
-        $this->table('demo')->insert($data)->saveData();
+        $this->table('example')->insert($data)->saveData();
     }
 }

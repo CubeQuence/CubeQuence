@@ -16,6 +16,7 @@ $config->attach('app');
 $config->attach('cache');
 $config->attach('cors');
 $config->attach('database');
+$config->attach('ratelimit');
 $config->attach('variants');
 
 // Debug Helper

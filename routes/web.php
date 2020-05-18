@@ -23,9 +23,9 @@ Middleware::create(['middleware' => Session::class], function () {
     Route::get('/dashboard', 'UserController@dashboard');
 });
 
-Middleware::create(['prefix' => '/demo', 'middleware' => [CORS::class, RateLimit::class]], function () {
-    Route::get('/', 'DemoController@index');
-    Route::post('/', 'DemoController@create', JSON::class);
-    Route::patch('/{id}', 'DemoController@update', JSON::class);
-    Route::delete('/{id}', 'DemoController@delete');
+Middleware::create(['prefix' => '/example', 'middleware' => [RateLimit::class]], function () {
+    Route::get('', 'ExampleController@index');
+    Route::post('', 'ExampleController@create', JSON::class);
+    Route::patch('/{id}', 'ExampleController@update', JSON::class);
+    Route::delete('/{id}', 'ExampleController@delete');
 });

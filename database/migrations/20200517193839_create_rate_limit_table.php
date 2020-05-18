@@ -32,5 +32,11 @@ class CreateRateLimitTable extends AbstractMigration
     public function change()
     {
         // TODO: build migration
+        $ratelimit = $this->table('ratelimit');
+        $ratelimit->addColumn('fingerprint', 'string')
+            ->addColumn('counter', 'integer')
+            ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
+            ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
+            ->create();
     }
 }
