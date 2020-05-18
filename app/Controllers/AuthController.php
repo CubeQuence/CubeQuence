@@ -54,7 +54,7 @@ class AuthController extends Controller
         try {
             $data = $this->provider->getData($code, $_SERVER['REMOTE_ADDR'], $_SERVER['HTTP_USER_AGENT']);
         } catch (Exception $e) {
-            return $this->logout("token");
+            return $this->logout('token');
             // var_dump($e->getMessage());exit;
         }
 

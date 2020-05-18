@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class Demo extends AbstractMigration
+class CreateRateLimitTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -10,7 +10,7 @@ class Demo extends AbstractMigration
      * Write your reversible migrations using this method.
      *
      * More information on writing migrations is available here:
-     * http://docs.phinx.org/en/latest/migrations.html#the-abstractmigration-class
+     * https://book.cakephp.org/phinx/0/en/migrations.html
      *
      * The following commands can be used in this method and Phinx will
      * automatically reverse them when rolling back:
@@ -31,11 +31,6 @@ class Demo extends AbstractMigration
      */
     public function change()
     {
-        $demo = $this->table('demo', ['id' => false, 'primary_key' => 'id']);
-        $demo->addColumn('id', 'uuid')
-            ->addColumn('string', 'string', ['limit' => 64, 'null' => false])
-            ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
-            ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
-            ->create();
+        // TODO: build migration
     }
 }
