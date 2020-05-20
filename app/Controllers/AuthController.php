@@ -22,7 +22,7 @@ class AuthController extends Controller
     public function __construct()
     {
         $this->provider = new Client([
-            'app_id' => Config::get('app.id'),
+            'app_id' => Config::get('apps.id'),
             'app_url' => Config::get('app.url'),
             'debug' => App::debug()
         ]);
