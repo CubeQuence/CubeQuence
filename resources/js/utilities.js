@@ -21,7 +21,7 @@ const api = axios.create({
 const formDataToJSON = data => {
     const object = {};
     [...data].map((item) => object[item[0]] = item[1]);
-    return object
+    return object;
 }
 
 const apiUse = (method, endpoint, data) => {

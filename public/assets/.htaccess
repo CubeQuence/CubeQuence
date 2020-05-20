@@ -1,0 +1,2 @@
+# Caching assets
+Header always set Cache-Control "public,max-age=31536000,immutable"

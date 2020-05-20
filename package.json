@@ -2,21 +2,13 @@
   "private": true,
   "scripts": {
     "dev": "yarn run development",
-    "development": "webpack -d --mode development",
+    "development": "webpack --config bundler/config.dev.js",
     "prod": "yarn run production",
-    "production": "webpack -d --mode production"
+    "production": "webpack --config bundler/config.prod.js"
   },
   "devDependencies": {
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
-  },
-  "dependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "autoprefixer": "^9.8.0",
-    "babel-loader": "^8.1.0",
-    "eslint": "^7.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "postcss-loader": "^3.0.0"
+    "webpack-cli": "^3.3.11",
+    "webpack-merge": "^4.2.2"
   }
 }
