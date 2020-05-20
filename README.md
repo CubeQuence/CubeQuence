@@ -15,21 +15,17 @@ Ultra-Light custom php framework.
 For development
 
 1. `composer create-project --prefer-dist cubequence/cubequence hello-world`
-2. `yarn`
+2. Edit `.env`
+3. `composer migrate`
+4. `composer seed`
+5. Start development server `php -S localhost:8080 -t public`
+
+For deployment
+
+1. `git clone https://github.com/Luca-Castelnuovo/CubeQuence`
+2. `composer install --optimize-autoloader --no-dev`
 3. Edit `.env`
 4. `composer migrate`
-5. `composer seed`
-6. Start development server `php -S localhost:8080 -t public`
-7. In another terminal `yarn run development`
-
-For production
-
-1. `git clone https://github.com/laravel/laravel.git`
-2. `composer install --optimize-autoloader --no-dev`
-3. `yarn`
-4. Edit `.env`
-5. `composer migrate`
-6. `yarn run production`
 
 ## Security Vulnerabilities
 
