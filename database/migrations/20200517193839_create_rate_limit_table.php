@@ -1,8 +1,8 @@
 <?php
 
-use Phinx\Migration\AbstractMigration;
+use CQ\DB\Migration;
 
-class CreateRateLimitTable extends AbstractMigration
+class CreateRateLimitTable extends Migration
 {
     /**
      * Change Method.

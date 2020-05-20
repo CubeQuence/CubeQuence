@@ -1,9 +1,8 @@
 <?php
 
-use Phinx\Seed\AbstractSeed;
 use CQ\DB\Seeder;
 
-class ExampleSeeder extends AbstractSeed
+class ExampleSeeder extends Seeder
 {
     /**
      * Run Method.
@@ -15,7 +14,7 @@ class ExampleSeeder extends AbstractSeed
      */
     public function run()
     {
-        $faker = Seeder::create();
+        $faker = Seeder::faker();
         $data = [];
 
         for ($i = 0; $i < 5; $i++) {

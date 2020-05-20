@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b1c69660c73b12b82e0f86d475bbe63",
+    "content-hash": "cceb11b849873447e7cf4223d544e737",
     "packages": [
         {
             "name": "brick/math",
@@ -368,12 +368,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Luca-Castelnuovo/CubeQuence-framework.git",
-                "reference": "901ecdc05705a0c4d7daa411a28192f5041b4774"
+                "reference": "003ad990112d1550178c8d2e130f164f6232de6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Luca-Castelnuovo/CubeQuence-framework/zipball/901ecdc05705a0c4d7daa411a28192f5041b4774",
-                "reference": "901ecdc05705a0c4d7daa411a28192f5041b4774",
+                "url": "https://api.github.com/repos/Luca-Castelnuovo/CubeQuence-framework/zipball/003ad990112d1550178c8d2e130f164f6232de6b",
+                "reference": "003ad990112d1550178c8d2e130f164f6232de6b",
                 "shasum": ""
             },
             "require": {
@@ -386,6 +386,7 @@
                 "phpseclib/phpseclib": "^2.0",
                 "ramsey/uuid": "^4.0",
                 "respect/validation": "^2.0",
+                "robmorgan/phinx": "^0.12.1",
                 "twig/twig": "^3.0",
                 "vlucas/phpdotenv": "^4.1"
             },
@@ -410,7 +411,7 @@
                 "cubequence",
                 "framework"
             ],
-            "time": "2020-05-19T17:17:52+00:00"
+            "time": "2020-05-20T16:22:30+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -1384,16 +1385,16 @@
         },
         {
             "name": "respect/validation",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "6f9213287416a34afe864ba0b203feeb8f318bbe"
+                "reference": "e0fbed32c90b408652bb30803647d90901f612f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/6f9213287416a34afe864ba0b203feeb8f318bbe",
-                "reference": "6f9213287416a34afe864ba0b203feeb8f318bbe",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/e0fbed32c90b408652bb30803647d90901f612f1",
+                "reference": "e0fbed32c90b408652bb30803647d90901f612f1",
                 "shasum": ""
             },
             "require": {
@@ -1446,7 +1447,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-05-19T09:31:43+00:00"
+            "time": "2020-05-20T13:02:44+00:00"
         },
         {
             "name": "robmorgan/phinx",

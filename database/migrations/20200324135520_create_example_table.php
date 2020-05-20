@@ -1,8 +1,8 @@
 <?php
 
-use Phinx\Migration\AbstractMigration;
+use CQ\DB\Migration;
 
-class CreateExampleTable extends AbstractMigration
+class CreateExampleTable extends Migration
 {
     /**
      * Change Method.
@@ -33,7 +33,7 @@ class CreateExampleTable extends AbstractMigration
     {
         $example = $this->table('example', ['id' => false, 'primary_key' => 'id']);
         $example->addColumn('id', 'uuid')
-            ->addColumn('string', 'string', ['limit' => 64, 'null' => false])
+            ->addColumn('string', 'string', ['limit' => 2048, 'null' => false])
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->create();
