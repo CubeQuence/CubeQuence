@@ -20,13 +20,14 @@ class RatelimitSeeder extends AbstractSeed
 
         for ($i = 0; $i < 5; $i++) {
             $data[] = [
-                'fingerprint'   => $faker->uuid,
-                'counter'       => $faker->sentence,
+                'fingerprint'   => $faker->sha1,
+                'counter'       => $faker->numberBetween(0, 100),
+                'reset_time'    => time(),
                 'updated_at'    => date('Y-m-d H:i:s'),
                 'created_at'    => date('Y-m-d H:i:s'),
             ];
         }
 
-        $this->table('ratelimit')->insert($data)->saveData();
+        $this->table('cq_ratelimit')->insert($data)->saveData();
     }
 }

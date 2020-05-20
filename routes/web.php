@@ -19,7 +19,7 @@ Middleware::create(['prefix' => '/auth'], function () {
     Route::get('/logout', 'AuthController@logout');
 });
 
-Middleware::create(['middleware' => Session::class], function () {
+Middleware::create(['middleware' => [Session::class]], function () {
     Route::get('/dashboard', 'UserController@dashboard');
 });
 

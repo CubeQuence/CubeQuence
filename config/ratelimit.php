@@ -1,6 +1,6 @@
 <?php
 
 return [ // 5 requests / 60 seconds
-    'requests' => '5',
-    'reset' => '60'
+    'max_requests' => '5',
+    'reset_time' => '60'
 ];
