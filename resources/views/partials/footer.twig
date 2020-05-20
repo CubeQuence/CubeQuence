@@ -1,4 +1,9 @@
-<script src="/assets/js/index.js"></script>
+<script src="{{ asset('index.js') }}"></script>
+<script src="{{ asset('css.js') }}"></script>
+
+{% if page_script %}
+    <script src="{{ asset(page_script) }}"></script>
+{% endif %}
 
 {% if analytics.enabled %}
     <script

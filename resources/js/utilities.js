@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 document.addEventListener('DOMContentLoaded', function(){
     M.Sidenav.init(document.querySelectorAll('.sidenav'), {edge:"right"});
     M.Modal.init(document.querySelectorAll('.modal'), {});
@@ -24,7 +26,7 @@ const formDataToJSON = data => {
     return object;
 }
 
-const apiUse = (method, endpoint, data) => {
+export function apiUse(method, endpoint, data) {
     inputsDisabled(true);
 
     api[method](endpoint, data).then(async response => {
