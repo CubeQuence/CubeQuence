@@ -2,8 +2,9 @@
 
 namespace App\Validators;
 
-use CQ\Validators\v;
+// use CQ\Validators\v;
 use CQ\Validators\Validator;
+use Respect\Validation\Validator as v;
 
 class ExampleValidator extends Validator
 {
