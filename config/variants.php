@@ -2,15 +2,12 @@
 
 return [
     'Free' => [
-        'monthly_requests' => 200,
-        'max_templates' => 2
+        'fooBar' => 100
     ],
     'Personal' => [
-        'monthly_requests' => 1000,
-        'max_templates' => 5
+        'fooBar' => 200
     ],
     'Professional' => [
-        'monthly_requests' => 5000,
-        'max_templates' => 100
+        'fooBar' => 300
     ]
 ];
