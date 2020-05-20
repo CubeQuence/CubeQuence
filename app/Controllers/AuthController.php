@@ -6,6 +6,7 @@ use Exception;
 use CQ\Helpers\App;
 use CQ\Helpers\Str;
 use CQ\Helpers\Session;
+use CQ\Helpers\Request;
 use CQ\Apps\Client;
 use CQ\Config\Config;
 use CQ\Controllers\Controller;
@@ -52,7 +53,7 @@ class AuthController extends Controller
         $code = $request->getQueryParams()['code'];
 
         try {
-            $data = $this->provider->getData($code, $_SERVER['REMOTE_ADDR'], $_SERVER['HTTP_USER_AGENT']);
+            $data = $this->provider->getData($code, Request::ip(), Request::userAgent());
         } catch (Exception $e) {
             return $this->logout('token');
             // var_dump($e->getMessage());exit;
@@ -79,7 +80,7 @@ class AuthController extends Controller
         Session::destroy();
         Session::set('id', $id);
         Session::set('variant', $variant);
-        Session::set('ip', $_SERVER['REMOTE_ADDR']);
+        Session::set('ip', Request::ip());
         Session::set('expires', $expires);
 
         if ($return_to) {
