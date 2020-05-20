@@ -1,8 +1,9 @@
-<script src="{{ asset('index.js') }}"></script>
-<script src="{{ asset('css.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script src="/assets/js/utilities.js"></script>
 
 {% if page_script %}
-    <script src="{{ asset(page_script) }}"></script>
+    <script src="/assets/js/pages/{{ page_script }}"></script>
 {% endif %}
 
 {% if analytics.enabled %}

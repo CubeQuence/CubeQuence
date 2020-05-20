@@ -1,6 +1,2 @@
 /vendor
-/node_modules
-/.cache
-/public/assets
-/public/asset-manifest.json
 .env

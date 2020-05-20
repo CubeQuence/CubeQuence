@@ -14,4 +14,9 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    {% if page_css %}
+        <link rel="stylesheet" href="/assets/css/{{ page_css }}">
+    {% endif %}
 </head>
