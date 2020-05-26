@@ -14,8 +14,8 @@ return [
         'seeds' => '%%PHINX_CONFIG_DIR%%/database/seeds',
     ],
     'environments' => [
-        'default_database' => 'development',
-        'default_migration_table' => 'phinxlog',
+        'default_environment' => 'development',
+        'default_migration_table' => 'cq_log',
         'development' => [
             'adapter' => 'mysql',
             'host' => Config::get('database.host'),
