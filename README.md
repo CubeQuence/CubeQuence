@@ -33,4 +33,5 @@ Please review [our security policy](https://github.com/CubeQuence/CubeQuence/sec
 
 ## License
 
-The CubeQuence framework is open-sourced software licensed under the [MIT license](LICENSE.md).
+Copyright © 2020 [Luca Castelnuovo](https://github.com/Luca-Castelnuovo). <br />
+This project is [MIT](LICENSE.md) licensed.
