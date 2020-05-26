@@ -5,7 +5,6 @@ namespace App\Commands;
 use Exception;
 use CQ\Helpers\Str;
 use CQ\Helpers\App as AppHelper;
-use CQ\Config\Config;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -52,7 +51,7 @@ class App
             }
 
             file_put_contents($path, str_replace(
-                'APP_KEY="' . Config::get('app.key') . '"',
+                'APP_KEY="' . getenv('APP_KEY') . '"',
                 'APP_KEY="' . $key . '"',
                 file_get_contents($path)
             ));
