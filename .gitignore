@@ -1,5 +1,4 @@
 /vendor
 /.idea
 /.vscode
-composer.lock
 .env
