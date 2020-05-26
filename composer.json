@@ -40,7 +40,7 @@
         "seed": "composer phinx seed:run -v"
     },
     "support": {
-        "issues": "https://github.com/Luca-Castelnuovo/CubeQuence/issues",
-        "source": "https://github.com/Luca-Castelnuovo/CubeQuence"
+        "issues": "https://github.com/CubeQuence/CubeQuence/issues",
+        "source": "https://github.com/CubeQuence/CubeQuence"
     }
 }
