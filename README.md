@@ -1,4 +1,4 @@
-<p align="center"><a href="https://github.com/CubeQuence/CubeQuence" target="_blank" rel="noopener"><img src="https://i.imgur.com/SxUDZl9.png" width="400"></a></p>
+<p align="center"><a href="https://github.com/CubeQuence/CubeQuence" target="_blank" rel="noopener"><img src="https://raw.githubusercontent.com/CubeQuence/CubeQuence/master/public/assets/images/banner.png"></a></p>
 
 <p align="center">
 <a href="https://packagist.org/packages/cubequence/cubequence"><img src="https://poser.pugx.org/cubequence/cubequence/d/total.svg" alt="Total Downloads"></a>
