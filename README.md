@@ -16,16 +16,18 @@ For development
 
 1. `composer create-project --prefer-dist cubequence/cubequence hello-world`
 2. Edit `.env`
-3. `composer migrate`
-4. `composer seed`
-5. Start development server `php -S localhost:8080 -t public`
+3. `php cubequence app:key`
+4. `php cubequence db:migrate`
+5. `php cubequence db:seed`
+6. Start development server `php -S localhost:8080 -t public`
 
 For deployment
 
 1. `git clone https://github.com/CubeQuence/CubeQuence`
 2. `composer install --optimize-autoloader --no-dev`
 3. Edit `.env`
-4. `composer migrate`
+4. `php cubequence app:key`
+5. `php cubequence db:migrate`
 
 ## Security Vulnerabilities
 
