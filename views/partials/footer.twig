@@ -7,11 +7,6 @@
 {% endif %}
 
 {% if analytics.enabled %}
-    <script
-        async
-        src="https://analytics.lucacastelnuovo.nl/tracker.js"
-        data-ackee-server="https://analytics.lucacastelnuovo.nl"
-        data-ackee-domain-id="{{ analytics.domainId }}"
-        data-ackee-opts='{{ analytics.options }}'>
-    </script>
+    <noscript><img src="https://analytics.lucacastelnuovo.nl/ingress/{{ analytics.domainId }}/pixel.gif"></noscript>
+    <script src="https://analytics.lucacastelnuovo.nl/ingress/{{ analytics.domainId }}/script.js"></script>
 {% endif %}
