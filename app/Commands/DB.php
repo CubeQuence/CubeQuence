@@ -18,7 +18,7 @@ class DB
      * @param InputInterface $input
      * @param OutputInterface $output
      * @param SymfonyStyle $io
-     * 
+     *
      * @return void
      */
     public function migrate(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
@@ -80,7 +80,7 @@ class DB
      * @param InputInterface $input
      * @param OutputInterface $output
      * @param SymfonyStyle $io
-     * 
+     *
      * @return void
      */
     public function seed(InputInterface $input, OutputInterface $output, SymfonyStyle $io)

@@ -8,7 +8,7 @@ class UserController extends Controller
 {
     /**
      * Dashboard screen
-     * 
+     *
      * @return Html
      */
     public function dashboard()

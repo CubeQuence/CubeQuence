@@ -12,7 +12,7 @@ class ExampleController extends Controller
 {
     /**
      * List entries
-     * 
+     *
      * @return Json
      */
     public function index()
@@ -32,9 +32,9 @@ class ExampleController extends Controller
 
     /**
      * Create entry
-     * 
+     *
      * @param object $request
-     * 
+     *
      * @return Html
      */
     public function create($request)
@@ -64,10 +64,10 @@ class ExampleController extends Controller
 
     /**
      * Update entry
-     * 
+     *
      * @param object $request
      * @param string $id
-     * 
+     *
      * @return Html
      */
     public function update($request, $id)
@@ -112,9 +112,9 @@ class ExampleController extends Controller
 
     /**
      * Delete entry
-     * 
+     *
      * @param string $id
-     * 
+     *
      * @return Html
      */
     public function delete($id)

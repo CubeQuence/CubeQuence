@@ -17,7 +17,7 @@ class App
      * @param InputInterface $input
      * @param OutputInterface $output
      * @param SymfonyStyle $io
-     * 
+     *
      * @return void
      */
     public function key(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
