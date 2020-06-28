@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-
 use CQ\Config\Config;
 
 $config = new Config(__DIR__ . '/bootstrap');

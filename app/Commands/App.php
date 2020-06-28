@@ -41,7 +41,7 @@ class App
             });
 
             $key = Str::random($length);
-            $path =  __DIR__ . '/../../.env';
+            $path = __DIR__ . '/../../.env';
 
             if (!file_exists($path)) {
                 $io->warning('.env file not found, please set key manually');

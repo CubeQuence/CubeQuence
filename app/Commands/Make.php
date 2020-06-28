@@ -38,9 +38,9 @@ class Make
             $command = $phinx->find('create');
 
             $arguments = [
-                'command' => "create",
+                'command' => 'create',
                 'name' => $name,
-                '--template' =>  __DIR__ . '/../../vendor/cubequence/framework/src/CubeQuence/DB/Template/Migration.php',
+                '--template' => __DIR__ . '/../../vendor/cubequence/framework/src/CubeQuence/DB/Template/Migration.php',
                 '--configuration' => __DIR__ . '/../../phinx.php'
             ];
 

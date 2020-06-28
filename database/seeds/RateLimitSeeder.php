@@ -19,11 +19,11 @@ class RatelimitSeeder extends Seeder
 
         for ($i = 0; $i < 5; $i++) {
             $data[] = [
-                'fingerprint'   => $faker->sha1,
-                'counter'       => $faker->numberBetween(0, 100),
-                'reset_time'    => time(),
-                'updated_at'    => date('Y-m-d H:i:s'),
-                'created_at'    => date('Y-m-d H:i:s'),
+                'fingerprint' => $faker->sha1,
+                'counter' => $faker->numberBetween(0, 100),
+                'reset_time' => time(),
+                'updated_at' => date('Y-m-d H:i:s'),
+                'created_at' => date('Y-m-d H:i:s'),
             ];
         }
 
