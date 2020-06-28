@@ -119,7 +119,7 @@ class ExampleController extends Controller
      */
     public function delete($id)
     {
-        DB::delete('example',  ['id' => $id]);
+        DB::delete('example', ['id' => $id]);
 
         return $this->respondJson('Example Deleted');
     }

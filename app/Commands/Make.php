@@ -18,7 +18,7 @@ class Make
      * @param InputInterface $input
      * @param OutputInterface $output
      * @param SymfonyStyle $io
-     * 
+     *
      * @return void
      */
     public function migration(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
@@ -60,7 +60,7 @@ class Make
      * @param InputInterface $input
      * @param OutputInterface $output
      * @param SymfonyStyle $io
-     * 
+     *
      * @return void
      */
     public function seed(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
