@@ -37,6 +37,7 @@ class CreateRateLimitTable extends Migration
             ->addColumn('reset_time', 'integer')
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
-            ->create();
+            ->create()
+        ;
     }
 }

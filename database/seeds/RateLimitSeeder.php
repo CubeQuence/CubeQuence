@@ -17,7 +17,7 @@ class RatelimitSeeder extends Seeder
         $faker = Seeder::faker();
         $data = [];
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $data[] = [
                 'fingerprint' => $faker->sha1,
                 'counter' => $faker->numberBetween(0, 100),

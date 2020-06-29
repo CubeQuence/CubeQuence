@@ -7,7 +7,7 @@ use CQ\Middleware\Middleware;
 class ExampleMiddleware extends Middleware
 {
     /**
-     * Custom actions
+     * Custom actions.
      *
      * @param $request
      * @param $next

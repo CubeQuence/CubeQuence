@@ -1,11 +1,11 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
-use CQ\Helpers\App;
 use CQ\Config\Config;
-use CQ\Routing\Router;
 use CQ\DB\DB;
+use CQ\Helpers\App;
+use CQ\Routing\Router;
 
 session_start();
 
@@ -24,8 +24,8 @@ $config->attach('variants');
 if (App::debug()) {
     ini_set('error_reporting', E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 
-    $whoops = new \Whoops\Run;
-    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+    $whoops = new \Whoops\Run();
+    $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
     $whoops->register();
 }
 
@@ -39,6 +39,6 @@ $router = new Router([
     '500' => '/error/500',
 ]);
 
-require __DIR__ . '/../routes/web.php';
+require __DIR__.'/../routes/web.php';
 
 return $router;

@@ -2,24 +2,22 @@
 
 namespace App\Commands;
 
-use Exception;
 use CQ\Helpers\App;
+use Exception;
 use Phinx\Console\PhinxApplication;
-use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\ArrayInput;
+use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 class DB
 {
     /**
-     * Migrate command
+     * Migrate command.
      *
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
-     * @param SymfonyStyle $io
-     *
-     * @return void
+     * @param SymfonyStyle    $io
      */
     public function migrate(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
     {
@@ -41,7 +39,7 @@ class DB
                 'command' => 'rollback',
                 '--environment' => App::environment(),
                 '--target' => '0',
-                '--force'
+                '--force',
             ];
 
             if ($fresh) {
@@ -61,7 +59,7 @@ class DB
             $arguments = [
                 'command' => 'migrate',
                 '--environment' => App::environment(),
-                '--configuration' => __DIR__ . '/../../phinx.php'
+                '--configuration' => __DIR__.'/../../phinx.php',
             ];
 
             $command->run(new ArrayInput($arguments), $output);
@@ -75,13 +73,11 @@ class DB
     }
 
     /**
-     * Seed command
+     * Seed command.
      *
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
-     * @param SymfonyStyle $io
-     *
-     * @return void
+     * @param SymfonyStyle    $io
      */
     public function seed(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
     {
@@ -101,7 +97,7 @@ class DB
             $arguments = [
                 'command' => 'seed:run',
                 '--environment' => App::environment(),
-                '--configuration' => __DIR__ . '/../../phinx.php'
+                '--configuration' => __DIR__.'/../../phinx.php',
             ];
 
             $command->run(new ArrayInput($arguments), $output);

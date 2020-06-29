@@ -17,7 +17,7 @@ class ExampleSeeder extends Seeder
         $faker = Seeder::faker();
         $data = [];
 
-        for ($i = 0; $i < 5; $i++) {
+        for ($i = 0; $i < 5; ++$i) {
             $data[] = [
                 'id' => $faker->uuid,
                 'string' => $faker->sentence,

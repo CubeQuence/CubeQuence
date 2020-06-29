@@ -2,12 +2,12 @@
 
 return [
     'Free' => [
-        'fooBar' => 100
+        'fooBar' => 100,
     ],
     'Personal' => [
-        'fooBar' => 200
+        'fooBar' => 200,
     ],
     'Professional' => [
-        'fooBar' => 300
-    ]
+        'fooBar' => 300,
+    ],
 ];

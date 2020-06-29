@@ -5,5 +5,5 @@ return [
     'url' => getenv('APP_URL'),
     'env' => getenv('APP_ENV'),
     'debug' => getenv('APP_DEBUG'),
-    'key' => getenv('APP_KEY')
+    'key' => getenv('APP_KEY'),
 ];

@@ -36,6 +36,7 @@ class CreateExampleTable extends Migration
             ->addColumn('string', 'string', ['limit' => 2048, 'null' => false])
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
-            ->create();
+            ->create()
+        ;
     }
 }

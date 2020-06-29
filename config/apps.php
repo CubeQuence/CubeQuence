@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'id' => getenv('APPS_ID')
+    'id' => getenv('APPS_ID'),
 ];

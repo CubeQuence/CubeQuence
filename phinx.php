@@ -1,10 +1,10 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
 
 use CQ\Config\Config;
 
-$config = new Config(__DIR__ . '/bootstrap');
+$config = new Config(__DIR__.'/bootstrap');
 $config->attach('database');
 
 return [

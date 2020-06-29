@@ -1,11 +1,10 @@
 <?php
 
-use CQ\Routing\Route;
-use CQ\Routing\Middleware;
-use CQ\Middleware\CORS;
 use CQ\Middleware\JSON;
-use CQ\Middleware\Session;
 use CQ\Middleware\RateLimit;
+use CQ\Middleware\Session;
+use CQ\Routing\Middleware;
+use CQ\Routing\Route;
 
 Route::$router = $router->get();
 Middleware::$router = $router->get();

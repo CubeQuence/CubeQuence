@@ -2,23 +2,21 @@
 
 namespace App\Commands;
 
-use Exception;
-use CQ\Helpers\Str;
 use CQ\Helpers\App as AppHelper;
-use Symfony\Component\Console\Style\SymfonyStyle;
+use CQ\Helpers\Str;
+use Exception;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Style\SymfonyStyle;
 
 class App
 {
     /**
-     * Generate key command
+     * Generate key command.
      *
-     * @param InputInterface $input
+     * @param InputInterface  $input
      * @param OutputInterface $output
-     * @param SymfonyStyle $io
-     *
-     * @return void
+     * @param SymfonyStyle    $io
      */
     public function key(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
     {
@@ -41,7 +39,7 @@ class App
             });
 
             $key = Str::random($length);
-            $path = __DIR__ . '/../../.env';
+            $path = __DIR__.'/../../.env';
 
             if (!file_exists($path)) {
                 $io->warning('.env file not found, please set key manually');
@@ -51,8 +49,8 @@ class App
             }
 
             file_put_contents($path, str_replace(
-                'APP_KEY="' . getenv('APP_KEY') . '"',
-                'APP_KEY="' . $key . '"',
+                'APP_KEY="'.getenv('APP_KEY').'"',
+                'APP_KEY="'.$key.'"',
                 file_get_contents($path)
             ));
         } catch (Exception $e) {

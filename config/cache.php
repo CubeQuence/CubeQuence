@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'views' => true
+    'views' => true,
 ];
