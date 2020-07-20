@@ -106,7 +106,7 @@
         },
         {
             "name": "cakephp/core",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
@@ -156,16 +156,16 @@
         },
         {
             "name": "cakephp/database",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/database.git",
-                "reference": "93eea05b05f7bcd89bcc1d2534e62056b25f5f4c"
+                "reference": "ef40f24b00acd4f14bc5fc59a9ab3a54ca2199fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/database/zipball/93eea05b05f7bcd89bcc1d2534e62056b25f5f4c",
-                "reference": "93eea05b05f7bcd89bcc1d2534e62056b25f5f4c",
+                "url": "https://api.github.com/repos/cakephp/database/zipball/ef40f24b00acd4f14bc5fc59a9ab3a54ca2199fc",
+                "reference": "ef40f24b00acd4f14bc5fc59a9ab3a54ca2199fc",
                 "shasum": ""
             },
             "require": {
@@ -201,11 +201,11 @@
                 "database abstraction",
                 "pdo"
             ],
-            "time": "2020-07-01T05:32:22+00:00"
+            "time": "2020-07-17T17:29:56+00:00"
         },
         {
             "name": "cakephp/datasource",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/datasource.git",
@@ -257,7 +257,7 @@
         },
         {
             "name": "cakephp/utility",
-            "version": "4.1.0",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
