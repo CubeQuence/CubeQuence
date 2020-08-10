@@ -60,7 +60,7 @@
         },
         {
             "name": "cakephp/collection",
-            "version": "4.1.1",
+            "version": "4.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/collection.git",
