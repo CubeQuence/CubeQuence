@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "brick/math",
-            "version": "0.9.0",
+            "version": "0.8.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "b69d0daabbb830b1dac93d757cdc5dab253574c2"
+                "reference": "e6f8e7d04346a95be89580f8c2c22d6c3fa65556"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/b69d0daabbb830b1dac93d757cdc5dab253574c2",
-                "reference": "b69d0daabbb830b1dac93d757cdc5dab253574c2",
+                "url": "https://api.github.com/repos/brick/math/zipball/e6f8e7d04346a95be89580f8c2c22d6c3fa65556",
+                "reference": "e6f8e7d04346a95be89580f8c2c22d6c3fa65556",
                 "shasum": ""
             },
             "require": {
