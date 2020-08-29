@@ -33,7 +33,7 @@
                     <div class="error-number">
                     <h3>{{ short_message }}</h3>
                     <h1>
-                        {% for number in code %}
+                        {% for number in code|split('') %}
                             <span>{{ number }}</span>
                         {% endfor %}
                     </h1>
