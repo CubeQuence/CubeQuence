@@ -2,5 +2,5 @@
 
 return [
     'enabled' => false,
-    'domainId' => '', // get from analytics.lucacastelnuovo.nl
+    'domainId' => '', // get from stats.castelnuovo.xyz
 ];
