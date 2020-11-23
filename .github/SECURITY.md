@@ -4,7 +4,7 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability within CubeQuence, please send an email to Luca Castelnuovo at luca@castelnuovo.xyz. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this repo, please send an email to Luca Castelnuovo at luca@castelnuovo.xyz. All security vulnerabilities will be promptly addressed.
 
 ### Public PGP Key
 
