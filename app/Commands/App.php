@@ -4,6 +4,7 @@ namespace App\Commands;
 
 use CQ\Helpers\App as AppHelper;
 use CQ\Helpers\Str;
+use CQ\Config\Config;
 use Exception;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -48,8 +49,11 @@ class App
                 return;
             }
 
+            $config = new Config(__DIR__ . '/..');
+            $config->attach('app');
+
             file_put_contents($path, str_replace(
-                'APP_KEY="'.getenv('APP_KEY').'"',
+                'APP_KEY="'.Config::get('app.key').'"',
                 'APP_KEY="'.$key.'"',
                 file_get_contents($path)
             ));
