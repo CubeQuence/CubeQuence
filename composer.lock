@@ -60,7 +60,7 @@
         },
         {
             "name": "cakephp/core",
-            "version": "4.1.6",
+            "version": "4.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
@@ -159,7 +159,7 @@
         },
         {
             "name": "cakephp/datasource",
-            "version": "4.1.6",
+            "version": "4.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/datasource.git",
@@ -211,16 +211,16 @@
         },
         {
             "name": "cakephp/utility",
-            "version": "4.1.6",
+            "version": "4.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
-                "reference": "302c697df8796198eae9429bb7f817cb79e6401c"
+                "reference": "3d1b4a39e85a2b277d1308bae3e6398dd4ed4c57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/utility/zipball/302c697df8796198eae9429bb7f817cb79e6401c",
-                "reference": "302c697df8796198eae9429bb7f817cb79e6401c",
+                "url": "https://api.github.com/repos/cakephp/utility/zipball/3d1b4a39e85a2b277d1308bae3e6398dd4ed4c57",
+                "reference": "3d1b4a39e85a2b277d1308bae3e6398dd4ed4c57",
                 "shasum": ""
             },
             "require": {
@@ -260,7 +260,7 @@
                 "string",
                 "utility"
             ],
-            "time": "2020-10-19T19:03:43+00:00"
+            "time": "2020-11-28T00:16:31+00:00"
         },
         {
             "name": "catfan/medoo",
