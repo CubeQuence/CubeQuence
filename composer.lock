@@ -60,16 +60,16 @@
         },
         {
             "name": "cakephp/core",
-            "version": "4.1.7",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/core.git",
-                "reference": "6584be57b8c39b7e0c5cc0400cc796a55c8e5344"
+                "reference": "635a924ff9ddc2e2f81e9073643c59e7ed6f7f55"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/core/zipball/6584be57b8c39b7e0c5cc0400cc796a55c8e5344",
-                "reference": "6584be57b8c39b7e0c5cc0400cc796a55c8e5344",
+                "url": "https://api.github.com/repos/cakephp/core/zipball/635a924ff9ddc2e2f81e9073643c59e7ed6f7f55",
+                "reference": "635a924ff9ddc2e2f81e9073643c59e7ed6f7f55",
                 "shasum": ""
             },
             "require": {
@@ -78,7 +78,8 @@
             },
             "suggest": {
                 "cakephp/cache": "To use Configure::store() and restore().",
-                "cakephp/event": "To use PluginApplicationInterface or plugin applications."
+                "cakephp/event": "To use PluginApplicationInterface or plugin applications.",
+                "league/container": "To use Container and ServiceProvider classes"
             },
             "type": "library",
             "autoload": {
@@ -106,7 +107,7 @@
                 "core",
                 "framework"
             ],
-            "time": "2020-10-21T22:39:20+00:00"
+            "time": "2020-12-03T14:30:58+00:00"
         },
         {
             "name": "cakephp/database",
@@ -211,16 +212,16 @@
         },
         {
             "name": "cakephp/utility",
-            "version": "4.1.7",
+            "version": "4.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/utility.git",
-                "reference": "3d1b4a39e85a2b277d1308bae3e6398dd4ed4c57"
+                "reference": "d8e667953f13f399fea08a7e204b9e0f022d5d3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/utility/zipball/3d1b4a39e85a2b277d1308bae3e6398dd4ed4c57",
-                "reference": "3d1b4a39e85a2b277d1308bae3e6398dd4ed4c57",
+                "url": "https://api.github.com/repos/cakephp/utility/zipball/d8e667953f13f399fea08a7e204b9e0f022d5d3c",
+                "reference": "d8e667953f13f399fea08a7e204b9e0f022d5d3c",
                 "shasum": ""
             },
             "require": {
@@ -260,7 +261,7 @@
                 "string",
                 "utility"
             ],
-            "time": "2020-11-28T00:16:31+00:00"
+            "time": "2020-12-04T14:13:14+00:00"
         },
         {
             "name": "catfan/medoo",
