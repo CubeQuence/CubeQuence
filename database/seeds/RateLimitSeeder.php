@@ -14,7 +14,7 @@ class RatelimitSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Seeder::faker();
+        $faker = self::faker();
         $data = [];
 
         for ($i = 0; $i < 5; ++$i) {
