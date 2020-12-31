@@ -12,6 +12,7 @@ session_start();
 // Config
 $config = new Config(__DIR__);
 $config->attach('analytics');
+$config->attach('api');
 $config->attach('app');
 $config->attach('auth'); // auth.castelnuovo.xyz
 $config->attach('cache');
@@ -19,6 +20,7 @@ $config->attach('cors');
 $config->attach('database');
 $config->attach('ratelimit');
 $config->attach('roles');
+$config->attach('secrets');
 
 // Debug Helper
 if (App::debug()) {
@@ -35,8 +37,8 @@ $database->connect();
 
 // Router
 $router = new Router([
-    '404' => '/error/404',
-    '500' => '/error/500',
+    '404' => '/_errors/404.html',
+    '500' => '/_errors/500.html',
 ]);
 
 require __DIR__.'/../routes/web.php';

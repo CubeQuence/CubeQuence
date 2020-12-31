@@ -36,4 +36,10 @@ $cli->command('make:seed name', [new CQ\CLI\Make(), 'seed'])
         'name' => 'Name of seeder e.g. (UsersSeeder)',
     ]);
 
+$cli->command('secrets:create', [new CQ\CLI\Secrets(), 'createStore'])
+    ->descriptions('Generate secret store');
+
+$cli->command('secrets:delete', [new CQ\CLI\Secrets(), 'deleteStore'])
+    ->descriptions('Delete secret store');
+
 $cli->run();
