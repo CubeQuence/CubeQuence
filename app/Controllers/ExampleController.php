@@ -4,9 +4,8 @@ namespace App\Controllers;
 
 use App\Validators\ExampleValidator;
 use CQ\Controllers\Controller;
-use CQ\DB\DB;
 use CQ\Helpers\UUID;
-use Exception;
+use CQ\DB\DB;
 
 class ExampleController extends Controller
 {
@@ -41,10 +40,10 @@ class ExampleController extends Controller
     {
         try {
             ExampleValidator::create($request->data);
-        } catch (Exception $e) {
+        } catch (\Throwable $th) {
             return $this->respondJson(
                 'Provided data was malformed',
-                json_decode($e->getMessage()),
+                json_decode($th->getMessage()),
                 422
             );
         }
@@ -74,10 +73,10 @@ class ExampleController extends Controller
     {
         try {
             ExampleValidator::update($request->data);
-        } catch (Exception $e) {
+        } catch (\Throwable $th) {
             return $this->respondJson(
                 'Provided data was malformed',
-                json_decode($e->getMessage()),
+                json_decode($th->getMessage()),
                 422
             );
         }
