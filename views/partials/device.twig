@@ -1,0 +1,45 @@
+{% extends "partials/base.twig" %}
+{% set title = "Device" %}
+{% set navbarDisable = true %}
+{% set page_script = "https://cdn.jsdelivr.net/gh/Luca-Castelnuovo/CubeQuence-framework@1.2.1/src/CubeQuence/Assets/js/device.min.js" %}
+
+{% block content %}
+<style>
+    .materialboxed {
+        display: inline;
+    }
+</style>
+
+<div class="row">
+    <div class="col s12 m8 offset-m2 l4 offset-l4">
+        <div class="card">
+            <div class="card-action blue accent-4 white-text center">
+                <h3>CubeQuence</h3>
+            </div>
+
+            <div class="card-content">
+                <div class="row center">
+                    <h4 id="message">Scan this QR to login</h4>
+                </div>
+
+                <div class="row center">
+                    <img id="qr" class="responsive-img" src="{{ qr }}">
+                </div>
+
+                <div id="tryAgain" class="row center" style="display: none;">
+                    <a href="/auth/request/device" class="button waves-effect waves-light btn-large blue accent-4 full-width">
+                        Try Again!
+                    </a>
+                </div>
+
+                <div class="row center">
+                    <a href="/" class="full-width waves-effect btn black-text grey lighten-2">
+                        Go back
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

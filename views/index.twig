@@ -6,9 +6,10 @@
 <div class="row">
     <div class="col s12 m8 offset-m2 l4 offset-l4">
         <div class="card">
-            <div class="card-action blue accent-4 white-text">
-                <h3>Welcome to CubeQuence</h3>
+            <div class="card-action blue accent-4 white-text center">
+                <h3>CubeQuence</h3>
             </div>
+
             <div class="card-content">
                 {% if message %}
                     <div class="card-panel hoverable z-depth-2 center-align">
@@ -17,17 +18,26 @@
                         </span>
                     </div>
                 {% endif %}
-                <div class="row center">
-                    {% if logged_in %}
+
+                {% if logged_in %}
+                    <div class="row center">
                         <a class="waves-effect waves-light btn-large blue accent-4" href="/dashboard">
                             Go to dashboard
                         </a>
+                    </div>
                     {% else %}
-                        <a class="full-width waves-effect waves-light btn-large" href="/auth/request">
-                            Signin / Register
-                        </a>
-                    {% endif %}
-                </div>
+                        <div class="row center">
+                            <a class="full-width waves-effect waves-light btn-large" href="/auth/request">
+                                Authenticate
+                            </a>
+                        </div>
+
+                        <div class="row center">
+                            <a class="full-width waves-effect btn black-text grey lighten-2" href="/auth/request/device">
+                                Authenticate using Mobile
+                            </a>
+                        </div>
+                {% endif %}
             </div>
         </div>
     </div>
