@@ -19,6 +19,11 @@ $cli->command('demo', [new App\Commands\Demo(), 'demo'])
 $cli->command('app:key', [new CQ\CLI\App(), 'key'])
     ->descriptions('Generate app key used for encryption');
 
+$cli->command('app:contextKey context', [new CQ\CLI\App(), 'contextKey'])
+    ->descriptions('Derive key from app_key using context', [
+        'context' => 'Context for key e.g. (Client Secret)',
+    ]);
+
 $cli->command('db:migrate [--fresh]', [new CQ\CLI\DB(), 'migrate'])
     ->descriptions('Migrate database tables', [
         '--fresh' => 'Reset DB before running migrations',
@@ -28,8 +33,7 @@ $cli->command('db:seed', [new CQ\CLI\DB(), 'seed'])
     ->descriptions('Seed database tables');
 
 $cli->command('make:migration [name]', [new CQ\CLI\Make(), 'migration'])
-    ->descriptions('Create database migration')
-    ->descriptions('Create database seeder', [
+    ->descriptions('Create database migration', [
         'name' => 'Name of migration e.g. (CreateUsersTable)',
     ]);
 

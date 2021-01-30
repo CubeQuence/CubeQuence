@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Validators\ExampleValidator;
 use CQ\Controllers\Controller;
 use CQ\Helpers\UUID;
+use CQ\Helpers\User;
 use CQ\DB\DB;
 
 class ExampleController extends Controller
@@ -18,6 +19,7 @@ class ExampleController extends Controller
     {
         $example = DB::select('example', [
             'id',
+            'user_id',
             'string',
             'updated_at',
             'created_at',
@@ -50,6 +52,7 @@ class ExampleController extends Controller
 
         $data = [
             'id' => UUID::v6(),
+            'user_id' => User::getId(),
             'string' => $request->data->string,
         ];
 

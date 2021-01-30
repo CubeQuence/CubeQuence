@@ -33,6 +33,7 @@ class CreateExampleTable extends Migration
     {
         $example = $this->table('example', ['id' => false, 'primary_key' => 'id']);
         $example->addColumn('id', 'uuid')
+            ->addColumn('user_id', 'uuid')
             ->addColumn('string', 'string', ['limit' => 2048, 'null' => false])
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])

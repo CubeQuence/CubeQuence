@@ -20,6 +20,8 @@ Middleware::create(['prefix' => '/auth'], function () {
     Route::post('/callback/device', 'AuthController@callbackDevice');
 
     Route::get('/logout', 'AuthController@logout');
+
+    Route::post('/delete', 'AuthController@delete', JSON::class);
 });
 
 Middleware::create(['middleware' => [Session::class]], function () {
