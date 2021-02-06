@@ -2133,25 +2133,26 @@
         },
         {
             "name": "respect/validation",
-            "version": "2.1.0",
+            "version": "2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Respect/Validation.git",
-                "reference": "6c3aed92137836788c8ce654b9c35763c5e98b54"
+                "reference": "51ad23e24c83f222468174861de61fc8bcde9bfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Respect/Validation/zipball/6c3aed92137836788c8ce654b9c35763c5e98b54",
-                "reference": "6c3aed92137836788c8ce654b9c35763c5e98b54",
+                "url": "https://api.github.com/repos/Respect/Validation/zipball/51ad23e24c83f222468174861de61fc8bcde9bfb",
+                "reference": "51ad23e24c83f222468174861de61fc8bcde9bfb",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.3 || ^8.0",
                 "respect/stringifier": "^0.2.0",
+                "sokil/php-isocodes": "^3.3",
                 "symfony/polyfill-mbstring": "^1.2"
             },
             "require-dev": {
-                "egulias/email-validator": "^2.1",
+                "egulias/email-validator": "^3.0",
                 "malukenho/docheader": "^0.1",
                 "mikey179/vfsstream": "^1.6",
                 "phpstan/phpstan": "^0.12",
@@ -2169,6 +2170,7 @@
                 "ext-bcmath": "Arbitrary Precision Mathematics",
                 "ext-fileinfo": "File Information",
                 "ext-mbstring": "Multibyte String Functions",
+                "sokil/php-isocodes": "To enable ISO codes validations",
                 "symfony/validator": "Use Symfony validator through Respect\\Validation",
                 "zendframework/zend-validator": "Use Zend Framework validator through Respect\\Validation"
             },
@@ -2197,9 +2199,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Respect/Validation/issues",
-                "source": "https://github.com/Respect/Validation/tree/2.1.0"
+                "source": "https://github.com/Respect/Validation/tree/2.2.1"
             },
-            "time": "2020-10-04T12:09:34+00:00"
+            "time": "2021-02-06T16:42:11+00:00"
         },
         {
             "name": "robmorgan/phinx",
@@ -2286,6 +2288,63 @@
                 "source": "https://github.com/cakephp/phinx/tree/0.12.5"
             },
             "time": "2021-01-18T19:51:48+00:00"
+        },
+        {
+            "name": "sokil/php-isocodes",
+            "version": "3.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sokil/php-isocodes.git",
+                "reference": "d05d170a554f61ba793e31a78d2b4b3aaa80907f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sokil/php-isocodes/zipball/d05d170a554f61ba793e31a78d2b4b3aaa80907f",
+                "reference": "d05d170a554f61ba793e31a78d2b4b3aaa80907f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "ext-gettext": "*",
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpmd/phpmd": "@stable",
+                "phpunit/phpunit": ">=7.5.20",
+                "squizlabs/php_codesniffer": "^3.4",
+                "symfony/translation": "^4.4.17|^5.2",
+                "vimeo/psalm": "^4.3"
+            },
+            "suggest": {
+                "ext-gettext": "Required for gettext translation driver",
+                "phpbench/phpbench": "Required to run benchmarks",
+                "symfony/translation": "Translation driver by Symfont project"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Sokil\\IsoCodes\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dmytro Sokil",
+                    "email": "dmytro.sokil@gmail.com"
+                }
+            ],
+            "description": "ISO country, subdivision, language, currency and script definitions and their translations. Based on pythons pycountry and Debian's iso-codes.",
+            "support": {
+                "issues": "https://github.com/sokil/php-isocodes/issues",
+                "source": "https://github.com/sokil/php-isocodes/tree/3.3.3"
+            },
+            "time": "2021-02-02T06:42:33+00:00"
         },
         {
             "name": "symfony/config",
