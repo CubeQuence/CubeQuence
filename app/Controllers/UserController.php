@@ -13,6 +13,6 @@ class UserController extends Controller
      */
     public function dashboard()
     {
-        return $this->respond('dashboard.twig');
+        return $this->respond->twig('dashboard.twig');
     }
 }

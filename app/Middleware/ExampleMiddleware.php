@@ -9,25 +9,29 @@ class ExampleMiddleware extends Middleware
     /**
      * Custom actions.
      *
-     * @param $request
-     * @param $next
+     * @param \Closure $next
      *
      * @return mixed
      */
-    public function handle($request, $next)
+    public function handleChild($next)
     {
         /*
-        [
-            'method' => $request->getMethod(),
-            'uri' => $request->getUri(),
-            'body' => $request->getBody(),
-            'parsedBody' => $request->getParsedBody(),
-            'headers' => $request->getHeaders(),
-            'queryStrings' => $request->getQueryParams(),
-            'attributes' => $request->getAttributes(),
-        ]
+            [
+                'getBody' => $this->request->getBody(),
+                'getContents' => $this->request->getBody()->getContents(),
+                'getSize' => $this->request->getBody()->getSize(),
+                'getHeader' => $this->request->getHeader('host'),
+                'getHeaderLine' => $this->request->getHeaderLine('host'),
+                // 'getHeaders' => $this->request->getHeaders(),
+                'getMethod' => $this->request->getMethod(),
+                'getParsedBody' => $this->request->getParsedBody(),
+                'getQueryParams' => $this->request->getQueryParams(),
+                'getRequestTarget' => $this->request->getRequestTarget(),
+                'getUploadedFiles' => $this->request->getUploadedFiles(),
+                'getPath' => $this->request->getUri()->getPath(),
+            ]
         */
 
-        return $next($request);
+        return $next($this->request);
     }
 }

@@ -20,30 +20,30 @@ class AuthController extends Auth
     public function delete($request)
     {
         $plaintext_key = Symmetric::getKey(null, 'encryption');
-        $encrypted_hash = $request->getHeader('authorization')[0];
+        $encrypted_hash = $request->getHeader('authorization');
         $context = Config::get('auth.secret');
 
         if (!Password::verify($plaintext_key, $encrypted_hash, $context)) {
-            return $this->respondJson('Invalid authorization header', [], 403);
+            return $this->respond->prettyJson('Invalid authorization header', [], 403);
         }
 
         try {
             $type = $request->data->event->type;
             $user_id = $request->data->event->user->id;
-        } catch (\Throwable $th) {
-            return $this->respondJson('Provided data was malformed', [], 400);
+        } catch (\Throwable) {
+            return $this->respond->prettyJson('Provided data was malformed', [], 400);
         }
 
         if (!in_array($type, [
             'user.delete',
             'user.registration.delete',
         ])) {
-            return $this->respondJson('Invalid webhook type', [], 400);
+            return $this->respond->prettyJson('Invalid webhook type', [], 400);
         }
 
         // Insert app specific deletion queries below
         DB::delete('example', ['user_id' => $user_id]);
 
-        return $this->respondJson('Webhook Received');
+        return $this->respond->prettyJson('Webhook Received');
     }
 }

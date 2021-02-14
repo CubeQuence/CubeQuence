@@ -3,34 +3,37 @@
 use CQ\Middleware\JSON;
 use CQ\Middleware\RateLimit;
 use CQ\Middleware\Session;
-use CQ\Routing\Middleware;
-use CQ\Routing\Route;
+use CQ\Controllers\General;
+use App\Controllers\AuthController;
+use App\Controllers\UserController;
+use App\Controllers\ExampleController;
 
-Route::$router = $router->get();
-Middleware::$router = $router->get();
+$route->get('/', [General::class, 'index']);
+$route->get('/error/{code}', [General::class, 'error']);
 
-Route::get('/', 'GeneralController@index');
-Route::get('/error/{code}', 'GeneralController@error');
+$middleware->create(['prefix' => '/auth'], function () use ($route) {
+    $route->get('/request', [AuthController::class, 'request']);
+    $route->get('/callback', [AuthController::class, 'callback']);
 
-Middleware::create(['prefix' => '/auth'], function () {
-    Route::get('/request', 'AuthController@request');
-    Route::get('/callback', 'AuthController@callback');
+    $route->get('/request/device', [AuthController::class, 'requestDevice']);
+    $route->post('/callback/device', [AuthController::class, 'callbackDevice']);
 
-    Route::get('/request/device', 'AuthController@requestDevice');
-    Route::post('/callback/device', 'AuthController@callbackDevice');
+    $route->get('/logout', [AuthController::class, 'logout']);
 
-    Route::get('/logout', 'AuthController@logout');
-
-    Route::post('/delete', 'AuthController@delete', JSON::class);
+    // TODO: move middleware to group https://github.com/miladrahimi/phprouter#middleware
+    $route->post('/delete', [AuthController::class, 'delete'], JSON::class);
 });
 
-Middleware::create(['middleware' => [Session::class]], function () {
-    Route::get('/dashboard', 'UserController@dashboard');
-});
+// $middleware->create(['middleware' => [Session::class]], function () use ($route) {
+    $route->get('/dashboard/?{id?}', [UserController::class, 'dashboard']);
+// });
 
-Middleware::create(['prefix' => '/example', 'middleware' => [RateLimit::class]], function () {
-    Route::get('', 'ExampleController@index');
-    Route::post('', 'ExampleController@create', JSON::class);
-    Route::patch('/{id}', 'ExampleController@update', JSON::class);
-    Route::delete('/{id}', 'ExampleController@delete');
+$middleware->create(['prefix' => '/example', 'middleware' => [RateLimit::class]], function () use ($route) {
+    $route->get('', [ExampleController::class, 'index']);
+
+    // TODO: move middleware to group https://github.com/miladrahimi/phprouter#middleware
+    $route->post('', [ExampleController::class, 'create'], JSON::class);
+    $route->patch('/{id}', [ExampleController::class, 'update'], JSON::class);
+
+    $route->delete('/{id}', [ExampleController::class, 'delete']);
 });

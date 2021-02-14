@@ -6,7 +6,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 use CQ\CLI\CLI;
 use CQ\Config\Config;
 
-$config = new Config(__DIR__ . '/bootstrap');
+$config = new Config();
 $config->attach('api');
 $config->attach('app');
 $config->attach('secrets');

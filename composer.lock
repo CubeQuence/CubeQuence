@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cceb11b849873447e7cf4223d544e737",
+    "content-hash": "76b0b7ee9464e28f4ca0e53f39d4eaff",
     "packages": [
         {
             "name": "brick/math",
@@ -358,16 +358,10 @@
         {
             "name": "cubequence/framework",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/CubeQuence/framework.git",
-                "reference": "aa1e1bbe3d68216edbed79f87dbc0899b01dc723"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/CubeQuence/framework/zipball/aa1e1bbe3d68216edbed79f87dbc0899b01dc723",
-                "reference": "aa1e1bbe3d68216edbed79f87dbc0899b01dc723",
-                "shasum": ""
+                "type": "path",
+                "url": "../framework",
+                "reference": "aa1e1bbe3d68216edbed79f87dbc0899b01dc723"
             },
             "require": {
                 "catfan/medoo": "^1.7",
@@ -383,14 +377,12 @@
                 "twig/twig": "^3.0",
                 "vlucas/phpdotenv": "^5.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "CQ\\": "src/CubeQuence/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -409,13 +401,9 @@
                 "issues": "https://github.com/CubeQuence/CubeQuence/issues",
                 "source": "https://github.com/CubeQuence/CubeQuence"
             },
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/ltcastelnuovo",
-                    "type": "custom"
-                }
-            ],
-            "time": "2021-01-30T19:46:43+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "fzaninotto/faker",

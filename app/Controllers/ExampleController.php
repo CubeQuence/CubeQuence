@@ -25,7 +25,7 @@ class ExampleController extends Controller
             'created_at',
         ], []);
 
-        return $this->respondJson(
+        return $this->respond->prettyJson(
             'Example Entries',
             $example
         );
@@ -43,11 +43,7 @@ class ExampleController extends Controller
         try {
             ExampleValidator::create($request->data);
         } catch (\Throwable $th) {
-            return $this->respondJson(
-                'Provided data was malformed',
-                json_decode($th->getMessage()),
-                422
-            );
+            return $this->respond->prettyJson('Provided data was malformed', $th->getMessage(), 422);
         }
 
         $data = [
@@ -58,7 +54,7 @@ class ExampleController extends Controller
 
         DB::create('example', $data);
 
-        return $this->respondJson(
+        return $this->respond->prettyJson(
             'Example Created',
             $data
         );
@@ -77,7 +73,7 @@ class ExampleController extends Controller
         try {
             ExampleValidator::update($request->data);
         } catch (\Throwable $th) {
-            return $this->respondJson(
+            return $this->respond->prettyJson(
                 'Provided data was malformed',
                 json_decode($th->getMessage()),
                 422
@@ -87,7 +83,7 @@ class ExampleController extends Controller
         $example = DB::get('example', ['string'], ['id' => $id]);
 
         if (!$example) {
-            return $this->respondJson(
+            return $this->respond->prettyJson(
                 'Example not found',
                 [],
                 404
@@ -106,7 +102,7 @@ class ExampleController extends Controller
             ]
         );
 
-        return $this->respondJson(
+        return $this->respond->prettyJson(
             'Example Updated',
             $data
         );
@@ -123,6 +119,6 @@ class ExampleController extends Controller
     {
         DB::delete('example', ['id' => $id]);
 
-        return $this->respondJson('Example Deleted');
+        return $this->respond->prettyJson('Example Deleted');
     }
 }

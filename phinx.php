@@ -4,7 +4,7 @@ require_once __DIR__.'/vendor/autoload.php';
 
 use CQ\Config\Config;
 
-$config = new Config(__DIR__.'/bootstrap');
+$config = new Config();
 $config->attach('database');
 
 return [
