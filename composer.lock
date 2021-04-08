@@ -2293,16 +2293,16 @@
         },
         {
             "name": "sokil/php-isocodes",
-            "version": "3.3.6",
+            "version": "3.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sokil/php-isocodes.git",
-                "reference": "a399f184a9cba9d56c27fdaff94e80cd5b932834"
+                "reference": "ef45a03486c4f18a609334373561e32f7ed73767"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sokil/php-isocodes/zipball/a399f184a9cba9d56c27fdaff94e80cd5b932834",
-                "reference": "a399f184a9cba9d56c27fdaff94e80cd5b932834",
+                "url": "https://api.github.com/repos/sokil/php-isocodes/zipball/ef45a03486c4f18a609334373561e32f7ed73767",
+                "reference": "ef45a03486c4f18a609334373561e32f7ed73767",
                 "shasum": ""
             },
             "require": {
@@ -2345,9 +2345,9 @@
             "description": "ISO country, subdivision, language, currency and script definitions and their translations. Based on pythons pycountry and Debian's iso-codes.",
             "support": {
                 "issues": "https://github.com/sokil/php-isocodes/issues",
-                "source": "https://github.com/sokil/php-isocodes/tree/3.3.6"
+                "source": "https://github.com/sokil/php-isocodes/tree/3.3.7"
             },
-            "time": "2021-03-17T16:39:05+00:00"
+            "time": "2021-04-02T06:38:42+00:00"
         },
         {
             "name": "symfony/config",
