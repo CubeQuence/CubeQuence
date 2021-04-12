@@ -1,11 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 require_once __DIR__.'/vendor/autoload.php';
 
 use CQ\Config\Config;
-
-$config = new Config();
-$config->attach('database');
 
 return [
     'paths' => [

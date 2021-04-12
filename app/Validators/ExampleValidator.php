@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Validators;
 
 use CQ\Validators\Validator;
@@ -9,10 +11,8 @@ class ExampleValidator extends Validator
 {
     /**
      * Validate json submission.
-     *
-     * @param object $data
      */
-    public static function create($data)
+    public static function create(object $data): void
     {
         $v = v::attribute('string', v::alnum(' ', '-')->length(1, 64));
 
@@ -21,10 +21,8 @@ class ExampleValidator extends Validator
 
     /**
      * Validate json submission.
-     *
-     * @param object $data
      */
-    public static function update($data)
+    public static function update(object $data): void
     {
         $v = v::attribute('string', v::optional(v::alnum()->length(1, 64)));
 

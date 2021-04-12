@@ -4,9 +4,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 
 use CQ\CLI\CLI;
-use CQ\Config\Config;
 
-new Config();
 $cli = new CLI();
 
 $cli->command('demo', [new App\Commands\Demo(), 'demo'])

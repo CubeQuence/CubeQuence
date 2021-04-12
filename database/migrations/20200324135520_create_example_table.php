@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use CQ\DB\Migration;
 
 class CreateExampleTable extends Migration
@@ -29,7 +31,7 @@ class CreateExampleTable extends Migration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change()
+    public function change(): void
     {
         $example = $this->table('example', ['id' => false, 'primary_key' => 'id']);
         $example->addColumn('id', 'uuid')

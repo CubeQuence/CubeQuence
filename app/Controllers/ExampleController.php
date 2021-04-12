@@ -1,21 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controllers;
 
 use App\Validators\ExampleValidator;
 use CQ\Controllers\Controller;
-use CQ\Helpers\UUID;
-use CQ\Helpers\User;
 use CQ\DB\DB;
+use CQ\Helpers\User;
+use CQ\Helpers\UUID;
+use CQ\Response\HtmlResponse;
+use CQ\Response\JsonResponse;
 
 class ExampleController extends Controller
 {
     /**
      * List entries.
-     *
-     * @return Json
      */
-    public function index()
+    public function index(): JsonResponse
     {
         $example = DB::select('example', [
             'id',
@@ -33,12 +35,8 @@ class ExampleController extends Controller
 
     /**
      * Create entry.
-     *
-     * @param object $request
-     *
-     * @return Html
      */
-    public function create($request)
+    public function create(object $request): HtmlResponse
     {
         try {
             ExampleValidator::create($request->data);
@@ -62,13 +60,8 @@ class ExampleController extends Controller
 
     /**
      * Update entry.
-     *
-     * @param object $request
-     * @param string $id
-     *
-     * @return Html
      */
-    public function update($request, $id)
+    public function update(object $request, string $id): HtmlResponse
     {
         try {
             ExampleValidator::update($request->data);
@@ -82,7 +75,7 @@ class ExampleController extends Controller
 
         $example = DB::get('example', ['string'], ['id' => $id]);
 
-        if (!$example) {
+        if (! $example) {
             return $this->respond->prettyJson(
                 'Example not found',
                 [],
@@ -110,12 +103,8 @@ class ExampleController extends Controller
 
     /**
      * Delete entry.
-     *
-     * @param string $id
-     *
-     * @return Html
      */
-    public function delete($id)
+    public function delete(string $id): HtmlResponse
     {
         DB::delete('example', ['id' => $id]);
 

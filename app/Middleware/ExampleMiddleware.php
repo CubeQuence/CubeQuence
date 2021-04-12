@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Middleware;
 
+use Closure;
 use CQ\Middleware\Middleware;
 
 class ExampleMiddleware extends Middleware
@@ -9,11 +12,9 @@ class ExampleMiddleware extends Middleware
     /**
      * Custom actions.
      *
-     * @param \Closure $next
-     *
      * @return mixed
      */
-    public function handleChild($next)
+    public function handleChild(Closure $next)
     {
         /*
             [

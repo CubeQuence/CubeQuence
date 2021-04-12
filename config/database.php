@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'host' => env('DB_HOST'),
     'port' => env('DB_PORT'),

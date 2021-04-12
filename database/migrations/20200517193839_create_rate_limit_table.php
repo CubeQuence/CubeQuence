@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use CQ\DB\Migration;
 
 class CreateRateLimitTable extends Migration
@@ -29,12 +31,12 @@ class CreateRateLimitTable extends Migration
      * Remember to call "create()" or "update()" and NOT "save()" when working
      * with the Table class.
      */
-    public function change()
+    public function change(): void
     {
         $ratelimit = $this->table('cq_ratelimit');
-        $ratelimit->addColumn('fingerprint', 'string')
-            ->addColumn('counter', 'integer')
-            ->addColumn('reset_time', 'integer')
+        $ratelimit->addColumn('key', 'string')
+            ->addColumn('current', 'integer')
+            ->addColumn('reset_at', 'integer')
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->create()

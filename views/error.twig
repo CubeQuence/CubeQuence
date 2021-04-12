@@ -31,14 +31,14 @@
                 <div id="error">
                 <div class="error">
                     <div class="error-number">
-                    <h3>{{ short_message }}</h3>
+                    <h3>{{ error }}</h3>
                     <h1>
                         {% for number in code|split('') %}
                             <span>{{ number }}</span>
                         {% endfor %}
                     </h1>
                     </div>
-                    <h2>{{ message }}</h2>
+                    <h2>{{ description }}</h2>
                 </div>
                 </div>
             </body>

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Commands;
 
 use Symfony\Component\Console\Input\InputInterface;
@@ -10,12 +12,8 @@ class Demo
 {
     /**
      * Demo command.
-     *
-     * @param InputInterface  $input
-     * @param OutputInterface $output
-     * @param SymfonyStyle    $io
      */
-    public function demo(InputInterface $input, OutputInterface $output, SymfonyStyle $io)
+    public function demo(InputInterface $input, OutputInterface $output, SymfonyStyle $io): void
     {
         $io->success('Demo run successfully');
     }

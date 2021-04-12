@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'id' => env('AUTH_ID'),
     'secret' => env('AUTH_SECRET'),

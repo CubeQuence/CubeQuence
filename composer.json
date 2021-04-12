@@ -19,11 +19,12 @@
         }
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=8.0",
         "cubequence/framework": "dev-master"
     },
     "require-dev": {
-        "filp/whoops": "^2.7"
+        "filp/whoops": "^2.7",
+        "nunomaduro/phpinsights": "dev-master"
     },
     "config": {
         "optimize-autoloader": true,
