@@ -14,7 +14,7 @@ class ExampleMiddleware extends Middleware
      *
      * @return mixed
      */
-    public function handleChild(Closure $next)
+    public function handleChild(Closure $next): Closure
     {
         /*
             [

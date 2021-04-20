@@ -16,14 +16,14 @@ class RatelimitSeeder extends Seeder
      */
     public function run(): void
     {
-        $faker = self::faker();
+        $faker = self::faker(); // TODO: faker isn't imported
         $data = [];
 
         for ($i = 0; $i < 5; ++$i) {
             $data[] = [
-                'fingerprint' => $faker->sha1,
-                'counter' => $faker->numberBetween(0, 100),
-                'reset_time' => time(),
+                'key' => $faker->sha256() . ':60:26971784',
+                'current' => $faker->numberBetween(0, 100),
+                'reset_at' => time(),
                 'updated_at' => date('Y-m-d H:i:s'),
                 'created_at' => date('Y-m-d H:i:s'),
             ];

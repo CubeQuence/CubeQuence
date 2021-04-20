@@ -7,10 +7,10 @@ namespace App\Controllers;
 use App\Validators\ExampleValidator;
 use CQ\Controllers\Controller;
 use CQ\DB\DB;
-use CQ\Helpers\User;
-use CQ\Helpers\UUID;
-use CQ\Response\HtmlResponse;
+use CQ\Helpers\AuthHelper;
+use CQ\Helpers\UuidHelper;
 use CQ\Response\JsonResponse;
+use CQ\Response\Respond;
 
 class ExampleController extends Controller
 {
@@ -27,59 +27,66 @@ class ExampleController extends Controller
             'created_at',
         ], []);
 
-        return $this->respond->prettyJson(
-            'Example Entries',
-            $example
+        return Respond::prettyJson(
+            message: 'Example Entries',
+            data: $example
         );
     }
 
     /**
      * Create entry.
      */
-    public function create(object $request): HtmlResponse
+    public function create(object $request): JsonResponse
     {
         try {
             ExampleValidator::create($request->data);
         } catch (\Throwable $th) {
-            return $this->respond->prettyJson('Provided data was malformed', $th->getMessage(), 422);
+            return Respond::prettyJson(
+                message: 'Provided data was malformed',
+                data: $th->getMessage(),
+                code: 422
+            );
         }
 
+        $user = AuthHelper::getUser();
         $data = [
-            'id' => UUID::v6(),
-            'user_id' => User::getId(),
+            'id' => UuidHelper::v6(),
+            'user_id' => $user->getId(),
             'string' => $request->data->string,
         ];
 
-        DB::create('example', $data);
+        DB::create(
+            table: 'example',
+            data: $data
+        );
 
-        return $this->respond->prettyJson(
-            'Example Created',
-            $data
+        return Respond::prettyJson(
+            message: 'Example Created',
+            data: $data
         );
     }
 
     /**
      * Update entry.
      */
-    public function update(object $request, string $id): HtmlResponse
+    public function update(object $request, string $id): JsonResponse
     {
         try {
             ExampleValidator::update($request->data);
         } catch (\Throwable $th) {
-            return $this->respond->prettyJson(
-                'Provided data was malformed',
-                json_decode($th->getMessage()),
-                422
+            return Respond::prettyJson(
+                message: 'Provided data was malformed',
+                data: $th->getMessage(),
+                code: 422
             );
         }
 
         $example = DB::get('example', ['string'], ['id' => $id]);
 
-        if (! $example) {
-            return $this->respond->prettyJson(
-                'Example not found',
-                [],
-                404
+        if (!$example) {
+            return Respond::prettyJson(
+                message: 'Example not found',
+                code: 404
             );
         }
 
@@ -88,26 +95,31 @@ class ExampleController extends Controller
         ];
 
         DB::update(
-            'example',
-            $data,
-            [
+            table: 'example',
+            data: $data,
+            where: [
                 'id' => $id,
             ]
         );
 
-        return $this->respond->prettyJson(
-            'Example Updated',
-            $data
+        return Respond::prettyJson(
+            message: 'Example Updated',
+            data: $data
         );
     }
 
     /**
      * Delete entry.
      */
-    public function delete(string $id): HtmlResponse
+    public function delete(string $id): JsonResponse
     {
-        DB::delete('example', ['id' => $id]);
+        DB::delete(
+            table: 'example',
+            where: ['id' => $id]
+        );
 
-        return $this->respond->prettyJson('Example Deleted');
+        return Respond::prettyJson(
+            message: 'Example Deleted'
+        );
     }
 }
