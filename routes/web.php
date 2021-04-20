@@ -1,36 +1,40 @@
 <?php
 
-use CQ\Middleware\JSON;
-use CQ\Middleware\RateLimit;
-use CQ\Middleware\Session;
-use CQ\Routing\Middleware;
-use CQ\Routing\Route;
+declare(strict_types=1);
 
-Route::$router = $router->get();
-Middleware::$router = $router->get();
+use App\Controllers\UserController;
+use CQ\Middleware\RatelimitMiddleware;
 
-Route::get('/', 'GeneralController@index');
-Route::get('/error/{code}', 'GeneralController@error');
-
-Middleware::create(['prefix' => '/auth'], function () {
-    Route::get('/request', 'AuthController@request');
-    Route::get('/callback', 'AuthController@callback');
-
-    Route::get('/request/device', 'AuthController@requestDevice');
-    Route::post('/callback/device', 'AuthController@callbackDevice');
-
-    Route::get('/logout', 'AuthController@logout');
-
-    Route::post('/delete', 'AuthController@delete', JSON::class);
+$middleware->create(['middleware' => [RatelimitMiddleware::class]], static function () use ($route): void {
+    $route->get('/debug/?{param?}', [UserController::class, 'debug']);
 });
 
-Middleware::create(['middleware' => [Session::class]], function () {
-    Route::get('/dashboard', 'UserController@dashboard');
-});
+// $route->get('/', [General::class, 'index']);
+// $route->get('/error/{code}', [General::class, 'error']);
 
-Middleware::create(['prefix' => '/example', 'middleware' => [RateLimit::class]], function () {
-    Route::get('', 'ExampleController@index');
-    Route::post('', 'ExampleController@create', JSON::class);
-    Route::patch('/{id}', 'ExampleController@update', JSON::class);
-    Route::delete('/{id}', 'ExampleController@delete');
-});
+// $middleware->create(['prefix' => '/auth'], function () use ($route) {
+//     $route->get('/request', [AuthController::class, 'request']);
+//     $route->get('/callback', [AuthController::class, 'callback']);
+
+//     $route->get('/request/device', [AuthController::class, 'requestDevice']);
+//     $route->post('/callback/device', [AuthController::class, 'callbackDevice']);
+
+//     $route->get('/logout', [AuthController::class, 'logout']);
+
+//     // TODO: move middleware to group https://github.com/miladrahimi/phprouter#middleware
+//     $route->post('/delete', [AuthController::class, 'delete'], JsonMiddleware::class);
+// });
+
+// $middleware->create(['middleware' => [SessionMiddleware::class]], function () use ($route) {
+//     $route->get('/dashboard', [UserController::class, 'dashboard']);
+// });
+
+// $middleware->create(['prefix' => '/example', 'middleware' => [RatelimitMiddleware::class]], function () use ($route) {
+//     $route->get('', [ExampleController::class, 'index']);
+
+//     // TODO: move middleware to group https://github.com/miladrahimi/phprouter#middleware
+//     $route->post('', [ExampleController::class, 'create'], JsonMiddleware::class);
+//     $route->patch('/{id}', [ExampleController::class, 'update'], JsonMiddleware::class);
+
+//     $route->delete('/{id}', [ExampleController::class, 'delete']);
+// });

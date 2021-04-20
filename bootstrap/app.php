@@ -1,45 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 require_once __DIR__.'/../vendor/autoload.php';
 
-use CQ\Config\Config;
-use CQ\DB\DB;
-use CQ\Helpers\App;
+use CQ\Helpers\AppHelper;
 use CQ\Routing\Router;
 
 session_start();
 
-// Config
-$config = new Config(__DIR__);
-$config->attach('analytics');
-$config->attach('api');
-$config->attach('app');
-$config->attach('auth'); // auth.castelnuovo.xyz
-$config->attach('cache');
-$config->attach('cors');
-$config->attach('database');
-$config->attach('ratelimit');
-$config->attach('roles');
-$config->attach('secrets');
+// Router
+$router = new Router(
+    route_404: '/error/404',
+    route_500: '/error/500'
+);
+
+$route = $router->getRoute();
+$middleware = $router->getMiddleware();
 
 // Debug Helper
-if (App::debug()) {
+if (AppHelper::isDebug()) {
     ini_set('error_reporting', E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 
     $whoops = new \Whoops\Run();
     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
     $whoops->register();
 }
-
-// Database
-$database = new DB();
-$database->connect();
-
-// Router
-$router = new Router([
-    '404' => '/_errors/404.html',
-    '500' => '/_errors/500.html',
-]);
 
 require __DIR__.'/../routes/web.php';
 
