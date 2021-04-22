@@ -13,6 +13,7 @@ use CQ\Helpers\ConfigHelper;
 use CQ\Helpers\SessionHelper;
 use CQ\OAuth\Client;
 use CQ\OAuth\Flows\Provider\AuthorizationCode;
+use CQ\OAuth\Models\UserModel;
 use CQ\Response\JsonResponse;
 use CQ\Response\RedirectResponse;
 use CQ\Response\Respond;
@@ -56,35 +57,55 @@ class AuthController extends Controller
     /**
      * Callback for OAuth.
      */
-    public function callback(array $queryParams): RedirectResponse
+    public function callback(): RedirectResponse|JsonResponse
     {
-        return Respond::redirect('https://exmaple.com');
+        // TODO: fake login
+        return Respond::json('test');
 
-        try {
-            $tokens = $this->client->callback(
-                queryParams: $queryParams,
-                storedVar: SessionHelper::get('oauth_state')
-            );
+        echo $this->requestHelper->getQueryParam('debug');
+        exit;
 
-            $user = $this->client->getUser(
-                accessToken: $tokens->getAccessToken()
-            );
-        } catch (\Throwable) {
-            return Respond::redirect(
-                url: '/?msg=error'
-            );
-        }
+        // if ($this->requestHelper->getQueryParam('debug')) {
+        //     $user = new UserModel(
+        //         allowed: true,
+        //         id: '1234',
+        //         email: 'foo@bar.gmail.com',
+        //         emailVerified: true,
+        //         roles: [
+        //             'user'
+        //         ]
+        //     );
 
-        if (!$user->isAllowed()) {
-            return Respond::redirect(
-                url: '/?msg=not_registered'
-            );
-        }
+        //     return Respond::redirect(
+        //         url: AuthHelper::login(user: $user)
+        //     );
+        // }
+
+        // try {
+        //     $tokens = $this->client->callback(
+        //         queryParams: $this->request->getQueryParams(),
+        //         storedVar: SessionHelper::get('oauth_state')
+        //     );
+
+        //     $user = $this->client->getUser(
+        //         accessToken: $tokens->getAccessToken()
+        //     );
+        // } catch (\Throwable) {
+        //     return Respond::redirect(
+        //         url: '/?msg=error'
+        //     );
+        // }
+
+        // if (!$user->isAllowed()) {
+        //     return Respond::redirect(
+        //         url: '/?msg=not_registered'
+        //     );
+        // }
 
 
-        return Respond::redirect(
-            url: AuthHelper::login(user: $user)
-        );
+        // return Respond::redirect(
+        //     url: AuthHelper::login(user: $user)
+        // );
     }
 
     /**
@@ -155,12 +176,12 @@ class AuthController extends Controller
         }
 
         // TODO: Insert app specific deletion queries below
-        // DB::delete(
-        //     table: 'example',
-        //     where: [
-        //         'user_id' => $userId
-        //     ]
-        // );
+        DB::delete(
+            table: 'example',
+            where: [
+                'user_id' => $userId
+            ]
+        );
 
         return Respond::prettyJson(
             message: 'Webhook Received'

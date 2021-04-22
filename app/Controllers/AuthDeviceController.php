@@ -55,11 +55,11 @@ class AuthDeviceController extends Controller
     /**
      * Callback for OAuth.
      */
-    public function callback(array $queryParams): JsonResponse
+    public function callback(): JsonResponse
     {
         try {
             $tokens = $this->client->callback(
-                queryParams: $queryParams,
+                queryParams: $this->request->getQueryParams(),
                 storedVar: SessionHelper::get('oauth_device_code')
             );
         } catch (OAuthException $th) {

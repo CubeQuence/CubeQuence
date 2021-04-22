@@ -27,17 +27,17 @@ $middleware->create(['prefix' => '/auth'], function () use ($route, $middleware)
     $route->post('/callback/device', [AuthDeviceController::class, 'callback']);
 });
 
-$middleware->create(['middleware' => [AuthMiddleware::class]], function () use ($route) {
+$middleware->create(['middleware' => [AuthMiddleware::class]], function () use ($route, $middleware) {
     $route->get('/dashboard', [UserController::class, 'dashboard']);
-});
 
-$middleware->create(['prefix' => '/example', 'middleware' => [RatelimitMiddleware::class]], function () use ($route, $middleware) {
-    $route->get('', [ExampleController::class, 'index']);
+    $middleware->create(['prefix' => '/example', 'middleware' => [RatelimitMiddleware::class]], function () use ($route, $middleware) {
+        $route->get('', [ExampleController::class, 'index']);
 
-    $middleware->create(['middleware' => [JsonMiddleware::class]], function () use ($route) {
-        $route->post('', [ExampleController::class, 'create']);
-        $route->patch('/{id}', [ExampleController::class, 'update']);
+        $middleware->create(['middleware' => [JsonMiddleware::class]], function () use ($route) {
+            $route->post('', [ExampleController::class, 'create']);
+            $route->patch('/{id}', [ExampleController::class, 'update']);
+        });
+
+        $route->delete('/{id}', [ExampleController::class, 'delete']);
     });
-
-    $route->delete('/{id}', [ExampleController::class, 'delete']);
 });

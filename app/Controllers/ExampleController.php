@@ -36,10 +36,10 @@ class ExampleController extends Controller
     /**
      * Create entry.
      */
-    public function create(object $request): JsonResponse
+    public function create(): JsonResponse
     {
         try {
-            ExampleValidator::create($request->data);
+            ExampleValidator::create($this->request->data);
         } catch (\Throwable $th) {
             return Respond::prettyJson(
                 message: 'Provided data was malformed',
@@ -52,7 +52,7 @@ class ExampleController extends Controller
         $data = [
             'id' => UuidHelper::v6(),
             'user_id' => $user->getId(),
-            'string' => $request->data->string,
+            'string' => $this->request->data->string,
         ];
 
         DB::create(
@@ -69,10 +69,10 @@ class ExampleController extends Controller
     /**
      * Update entry.
      */
-    public function update(object $request, string $id): JsonResponse
+    public function update(string $id): JsonResponse
     {
         try {
-            ExampleValidator::update($request->data);
+            ExampleValidator::update($this->request->data);
         } catch (\Throwable $th) {
             return Respond::prettyJson(
                 message: 'Provided data was malformed',
@@ -91,7 +91,7 @@ class ExampleController extends Controller
         }
 
         $data = [
-            'string' => $request->data->string ?: $example['string'],
+            'string' => $this->request->data->string ?: $example['string'],
         ];
 
         DB::update(
