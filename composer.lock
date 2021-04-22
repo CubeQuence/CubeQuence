@@ -653,16 +653,16 @@
         },
         {
             "name": "cubequence/helpers",
-            "version": "v1.0.6",
+            "version": "v1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CubeQuence/helpers.git",
-                "reference": "ac52d237c8da08cb4f1acf9b5bfc09b7182d7b41"
+                "reference": "27ef825c66679aac8cc76ff059e1dee810c4337a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CubeQuence/helpers/zipball/ac52d237c8da08cb4f1acf9b5bfc09b7182d7b41",
-                "reference": "ac52d237c8da08cb4f1acf9b5bfc09b7182d7b41",
+                "url": "https://api.github.com/repos/CubeQuence/helpers/zipball/27ef825c66679aac8cc76ff059e1dee810c4337a",
+                "reference": "27ef825c66679aac8cc76ff059e1dee810c4337a",
                 "shasum": ""
             },
             "require": {
@@ -703,7 +703,7 @@
                 "issues": "https://github.com/CubeQuence/helpers/issues",
                 "source": "https://github.com/CubeQuence/helpers"
             },
-            "time": "2021-04-20T14:32:43+00:00"
+            "time": "2021-04-22T14:20:21+00:00"
         },
         {
             "name": "cubequence/oauth",

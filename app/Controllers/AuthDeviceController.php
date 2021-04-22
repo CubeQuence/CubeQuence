@@ -14,6 +14,8 @@ use CQ\OAuth\Flows\Provider\DeviceCode;
 use CQ\Response\HtmlResponse;
 use CQ\Response\JsonResponse;
 use CQ\Response\Respond;
+use MiladRahimi\PhpRouter\Routing\Route;
+use Psr\Http\Message\ServerRequestInterface;
 
 class AuthDeviceController extends Controller
 {
@@ -22,13 +24,20 @@ class AuthDeviceController extends Controller
     /**
      * Auth provider config
      */
-    public function __construct()
-    {
+    public function __construct(
+        ServerRequestInterface $request,
+        Route $route,
+    ) {
         $this->client = new Client(
             flowProvider: new DeviceCode(),
             authorizationServer: ConfigHelper::get(key: 'auth.authorization_server'),
             clientId: ConfigHelper::get(key: 'auth.client_id'),
             clientSecret: ConfigHelper::get(key: 'auth.client_server')
+        );
+
+        parent::__construct(
+            request: $request,
+            route: $route
         );
     }
 

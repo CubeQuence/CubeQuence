@@ -17,6 +17,8 @@ use CQ\OAuth\Models\UserModel;
 use CQ\Response\JsonResponse;
 use CQ\Response\RedirectResponse;
 use CQ\Response\Respond;
+use MiladRahimi\PhpRouter\Routing\Route;
+use Psr\Http\Message\ServerRequestInterface;
 
 class AuthController extends Controller
 {
@@ -25,8 +27,10 @@ class AuthController extends Controller
     /**
      * Auth provider config
      */
-    public function __construct()
-    {
+    public function __construct(
+        ServerRequestInterface $request,
+        Route $route,
+    ) {
         $this->client = new Client(
             flowProvider: new AuthorizationCode(
                 redirectUri: ConfigHelper::get(key: 'app.url') . '/auth/callback'
@@ -34,6 +38,11 @@ class AuthController extends Controller
             authorizationServer: ConfigHelper::get(key: 'auth.authorization_server'),
             clientId: ConfigHelper::get(key: 'auth.client_id'),
             clientSecret: ConfigHelper::get(key: 'auth.client_secret')
+        );
+
+        parent::__construct(
+            request: $request,
+            route: $route
         );
     }
 
@@ -59,53 +68,31 @@ class AuthController extends Controller
      */
     public function callback(): RedirectResponse|JsonResponse
     {
-        // TODO: fake login
-        return Respond::json('test');
+        try {
+            $tokens = $this->client->callback(
+                queryParams: $this->request->getQueryParams(),
+                storedVar: SessionHelper::get('oauth_state')
+            );
 
-        echo $this->requestHelper->getQueryParam('debug');
-        exit;
+            $user = $this->client->getUser(
+                accessToken: $tokens->getAccessToken()
+            );
+        } catch (\Throwable) {
+            return Respond::redirect(
+                url: '/?msg=error'
+            );
+        }
 
-        // if ($this->requestHelper->getQueryParam('debug')) {
-        //     $user = new UserModel(
-        //         allowed: true,
-        //         id: '1234',
-        //         email: 'foo@bar.gmail.com',
-        //         emailVerified: true,
-        //         roles: [
-        //             'user'
-        //         ]
-        //     );
-
-        //     return Respond::redirect(
-        //         url: AuthHelper::login(user: $user)
-        //     );
-        // }
-
-        // try {
-        //     $tokens = $this->client->callback(
-        //         queryParams: $this->request->getQueryParams(),
-        //         storedVar: SessionHelper::get('oauth_state')
-        //     );
-
-        //     $user = $this->client->getUser(
-        //         accessToken: $tokens->getAccessToken()
-        //     );
-        // } catch (\Throwable) {
-        //     return Respond::redirect(
-        //         url: '/?msg=error'
-        //     );
-        // }
-
-        // if (!$user->isAllowed()) {
-        //     return Respond::redirect(
-        //         url: '/?msg=not_registered'
-        //     );
-        // }
+        if (!$user->isAllowed()) {
+            return Respond::redirect(
+                url: '/?msg=not_registered'
+            );
+        }
 
 
-        // return Respond::redirect(
-        //     url: AuthHelper::login(user: $user)
-        // );
+        return Respond::redirect(
+            url: AuthHelper::login(user: $user)
+        );
     }
 
     /**
