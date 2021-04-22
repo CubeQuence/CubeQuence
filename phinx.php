@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-require_once __DIR__.'/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-use CQ\Config\Config;
+use CQ\Helpers\ConfigHelper;
 
 return [
     'paths' => [
@@ -16,21 +16,21 @@ return [
         'default_migration_table' => 'cq_log',
         'development' => [
             'adapter' => 'mysql',
-            'host' => Config::get('database.host'),
-            'name' => Config::get('database.database'),
-            'user' => Config::get('database.username'),
-            'pass' => Config::get('database.password'),
-            'port' => Config::get('database.port'),
+            'host' => ConfigHelper::get('database.host'),
+            'name' => ConfigHelper::get('database.database'),
+            'user' => ConfigHelper::get('database.username'),
+            'pass' => ConfigHelper::get('database.password'),
+            'port' => ConfigHelper::get('database.port'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
         ],
         'production' => [
             'adapter' => 'mysql',
-            'host' => Config::get('database.host'),
-            'name' => Config::get('database.database'),
-            'user' => Config::get('database.username'),
-            'pass' => Config::get('database.password'),
-            'port' => Config::get('database.port'),
+            'host' => ConfigHelper::get('database.host'),
+            'name' => ConfigHelper::get('database.database'),
+            'user' => ConfigHelper::get('database.username'),
+            'pass' => ConfigHelper::get('database.password'),
+            'port' => ConfigHelper::get('database.port'),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
         ],
