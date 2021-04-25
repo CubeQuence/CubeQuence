@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e76adc528e45b13b67ba22dff7659d",
+    "content-hash": "eb3cb192b60514d7697bc9d820755874",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -599,11 +599,17 @@
         },
         {
             "name": "cubequence/framework",
-            "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../framework",
+            "version": "v1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CubeQuence/framework.git",
                 "reference": "8d4b01d67af135af459f33afefbb0c3416fe5df6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CubeQuence/framework/zipball/8d4b01d67af135af459f33afefbb0c3416fe5df6",
+                "reference": "8d4b01d67af135af459f33afefbb0c3416fe5df6",
+                "shasum": ""
             },
             "require": {
                 "cubequence/crypto": "^1.1",
@@ -629,6 +635,7 @@
                     "CQ\\": "src/CubeQuence/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -647,9 +654,13 @@
                 "issues": "https://github.com/CubeQuence/CubeQuence/issues",
                 "source": "https://github.com/CubeQuence/CubeQuence"
             },
-            "transport-options": {
-                "relative": true
-            }
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/ltcastelnuovo",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-04-25T11:44:25+00:00"
         },
         {
             "name": "cubequence/helpers",
@@ -6827,7 +6838,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "cubequence/framework": 20,
         "nunomaduro/phpinsights": 20
     },
     "prefer-stable": true,
