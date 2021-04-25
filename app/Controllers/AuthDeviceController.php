@@ -34,7 +34,7 @@ class AuthDeviceController extends Controller
             ),
             authorizationServer: ConfigHelper::get(key: 'auth.authorization_server'),
             clientId: ConfigHelper::get(key: 'auth.client_id'),
-            clientSecret: ConfigHelper::get(key: 'auth.client_server')
+            clientSecret: ConfigHelper::get(key: 'auth.client_secret')
         );
 
         parent::__construct(

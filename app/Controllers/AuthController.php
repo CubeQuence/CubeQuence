@@ -13,6 +13,7 @@ use CQ\Helpers\ConfigHelper;
 use CQ\Helpers\SessionHelper;
 use CQ\OAuth\Client;
 use CQ\OAuth\Flows\Provider\AuthorizationCode;
+use CQ\OAuth\Models\UserModel;
 use CQ\Response\JsonResponse;
 use CQ\Response\RedirectResponse;
 use CQ\Response\Respond;
