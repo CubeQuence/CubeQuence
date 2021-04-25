@@ -11,9 +11,15 @@
             "email": "luca@castelnuovo.xyz"
         }
     ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../framework"
+        }
+    ],
     "require": {
         "php": ">=8.0",
-        "cubequence/framework": "^1.3"
+        "cubequence/framework": "dev-master"
     },
     "require-dev": {
         "filp/whoops": "^2.7",

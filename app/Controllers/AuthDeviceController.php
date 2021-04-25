@@ -29,7 +29,9 @@ class AuthDeviceController extends Controller
         Route $route,
     ) {
         $this->client = new Client(
-            flowProvider: new DeviceCode(),
+            flowProvider: new DeviceCode(
+                qrApi: 'https://api.qrserver.com/v1/create-qr-code/?data='
+            ),
             authorizationServer: ConfigHelper::get(key: 'auth.authorization_server'),
             clientId: ConfigHelper::get(key: 'auth.client_id'),
             clientSecret: ConfigHelper::get(key: 'auth.client_server')
