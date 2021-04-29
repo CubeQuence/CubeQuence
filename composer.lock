@@ -383,27 +383,29 @@
         },
         {
             "name": "catfan/medoo",
-            "version": "v1.7.10",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/catfan/Medoo.git",
-                "reference": "2d675f73e23f63bbaeb9a8aa33318659a3d3c32f"
+                "reference": "5b8b909219cf5c48c2dc0d84dfc391ae540b2cd5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/catfan/Medoo/zipball/2d675f73e23f63bbaeb9a8aa33318659a3d3c32f",
-                "reference": "2d675f73e23f63bbaeb9a8aa33318659a3d3c32f",
+                "url": "https://api.github.com/repos/catfan/Medoo/zipball/5b8b909219cf5c48c2dc0d84dfc391ae540b2cd5",
+                "reference": "5b8b909219cf5c48c2dc0d84dfc391ae540b2cd5",
                 "shasum": ""
             },
             "require": {
                 "ext-pdo": "*",
-                "php": ">=5.4"
+                "php": ">=7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0"
             },
             "suggest": {
                 "ext-pdo_dblib": "For MSSQL or Sybase database on Linux/UNIX platform",
                 "ext-pdo_mysql": "For MySQL or MariaDB database",
                 "ext-pdo_oci": "For Oracle database",
-                "ext-pdo_oci8": "For Oracle version 8 database",
                 "ext-pdo_pqsql": "For PostgreSQL database",
                 "ext-pdo_sqlite": "For SQLite database",
                 "ext-pdo_sqlsrv": "For MSSQL database on both Window/Liunx platform"
@@ -411,7 +413,7 @@
             "type": "framework",
             "autoload": {
                 "psr-4": {
-                    "Medoo\\": "/src"
+                    "Medoo\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -421,7 +423,7 @@
             "authors": [
                 {
                     "name": "Angel Lai",
-                    "email": "angel@catfan.me"
+                    "email": "angel@medoo.in"
                 }
             ],
             "description": "The lightweight PHP database framework to accelerate development",
@@ -443,7 +445,13 @@
                 "issues": "https://github.com/catfan/Medoo/issues",
                 "source": "https://github.com/catfan/Medoo"
             },
-            "time": "2020-02-11T08:20:42+00:00"
+            "funding": [
+                {
+                    "url": "https://opencollective.com/medoo",
+                    "type": "open_collective"
+                }
+            ],
+            "time": "2021-04-28T08:31:14+00:00"
         },
         {
             "name": "cubequence/crypto",
@@ -496,26 +504,26 @@
         },
         {
             "name": "cubequence/db",
-            "version": "v1.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CubeQuence/db.git",
-                "reference": "ec9d6b114cbdc5a144c208f9e36cb3360511424c"
+                "reference": "95123acc054d41321ae0f16692eb8abc849e8794"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CubeQuence/db/zipball/ec9d6b114cbdc5a144c208f9e36cb3360511424c",
-                "reference": "ec9d6b114cbdc5a144c208f9e36cb3360511424c",
+                "url": "https://api.github.com/repos/CubeQuence/db/zipball/95123acc054d41321ae0f16692eb8abc849e8794",
+                "reference": "95123acc054d41321ae0f16692eb8abc849e8794",
                 "shasum": ""
             },
             "require": {
-                "catfan/medoo": "^1.7",
+                "catfan/medoo": "^2.0",
                 "cubequence/helpers": "^1.0",
+                "fakerphp/faker": "^1.14",
                 "php": ">=8.0.0",
                 "robmorgan/phinx": "^0.12.6"
             },
             "require-dev": {
-                "fakerphp/faker": "^1.14",
                 "nunomaduro/phpinsights": "dev-master",
                 "pestphp/pest": "^1.0"
             },
@@ -544,7 +552,7 @@
                 "issues": "https://github.com/CubeQuence/db/issues",
                 "source": "https://github.com/CubeQuence/db"
             },
-            "time": "2021-04-15T09:59:57+00:00"
+            "time": "2021-04-29T11:59:16+00:00"
         },
         {
             "name": "cubequence/file",
@@ -862,6 +870,71 @@
                 "source": "https://github.com/CubeQuence/Request"
             },
             "time": "2021-04-07T09:32:33+00:00"
+        },
+        {
+            "name": "fakerphp/faker",
+            "version": "v1.14.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "ed22aee8d17c7b396f74a58b1e7fefa4f90d5ef1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/ed22aee8d17c7b396f74a58b1e7fefa4f90d5ef1",
+                "reference": "ed22aee8d17c7b396f74a58b1e7fefa4f90d5ef1",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0",
+                "psr/container": "^1.0",
+                "symfony/deprecation-contracts": "^2.2"
+            },
+            "conflict": {
+                "fzaninotto/faker": "*"
+            },
+            "require-dev": {
+                "bamarni/composer-bin-plugin": "^1.4.1",
+                "ext-intl": "*",
+                "symfony/phpunit-bridge": "^4.4 || ^5.2"
+            },
+            "suggest": {
+                "ext-curl": "Required by Faker\\Provider\\Image to download images.",
+                "ext-dom": "Required by Faker\\Provider\\HtmlLorem for generating random HTML.",
+                "ext-iconv": "Required by Faker\\Provider\\ru_RU\\Text::realText() for generating real Russian text.",
+                "ext-mbstring": "Required for multibyte Unicode string functionality."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "v1.15-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/FakerPHP/Faker/issues",
+                "source": "https://github.com/FakerPHP/Faker/tree/v.1.14.1"
+            },
+            "time": "2021-03-30T06:27:33+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -5058,12 +5131,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/phpinsights.git",
-                "reference": "0004d04d07ae4b1902d395ebe6f0db99148cc776"
+                "reference": "d4f92e93a2a5ddf90664eb6a4cb9d159440abbcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/0004d04d07ae4b1902d395ebe6f0db99148cc776",
-                "reference": "0004d04d07ae4b1902d395ebe6f0db99148cc776",
+                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/d4f92e93a2a5ddf90664eb6a4cb9d159440abbcf",
+                "reference": "d4f92e93a2a5ddf90664eb6a4cb9d159440abbcf",
                 "shasum": ""
             },
             "require": {
@@ -5160,7 +5233,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-04-24T15:41:11+00:00"
+            "time": "2021-04-29T06:43:47+00:00"
         },
         {
             "name": "php-cs-fixer/diff",
