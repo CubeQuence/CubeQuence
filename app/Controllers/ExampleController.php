@@ -97,7 +97,7 @@ class ExampleController extends Controller
         if ($this->request->user->getId() !== $example['user_id']) {
             return Respond::prettyJson(
                 message: 'You do not have access',
-                code: 403
+                code: 401
             );
         }
 
@@ -140,7 +140,7 @@ class ExampleController extends Controller
         if ($this->request->user->getId() !== $example['user_id']) {
             return Respond::prettyJson(
                 message: 'You do not have access',
-                code: 403
+                code: 401
             );
         }
 
