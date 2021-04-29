@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use CQ\Controllers\Controller;
-use CQ\Crypto\Models\SymmetricKey;
-use CQ\Crypto\Password;
 use CQ\DB\DB;
 use CQ\Helpers\AuthHelper;
 use CQ\Helpers\ConfigHelper;
@@ -115,31 +113,9 @@ class AuthController extends Controller
     /**
      * Delete user webhook listener
      */
-    // TODO: test this functionality
     public function delete(): JsonResponse
     {
-        $plaintextKey = ConfigHelper::get('app.key');
-
-        $key = new SymmetricKey(
-            encodedKey: $plaintextKey
-        );
-
-        $password = new Password(
-            key: $key
-        );
-
-        var_dump($this->request);
-
-        $encryptedHash = $this->requestHelper->getHeader('authorization');
-        $context = ConfigHelper::get('auth.secret');
-
-        $verify = $password->verify(
-            plaintextPassword: $plaintextKey,
-            encryptedHashedPassword: $encryptedHash,
-            context: $context
-        );
-
-        if (!$verify) {
+        if (ConfigHelper::get('auth.client_secret') !== $this->requestHelper->getAuthorization()) {
             return Respond::prettyJson(
                 message: 'Invalid authorization header',
                 code: 403
