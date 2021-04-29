@@ -17,9 +17,10 @@ class GeneralController extends Controller
     public function index(): HtmlResponse
     {
         $msg = match ($this->requestHelper->getQueryParam('msg')) {
-            'error' => 'Please try again!',
-            'logout' => 'You have been logged out!',
-            'not_registered' => 'Please register or contact the administrator!',
+            'error' => 'Please try again',
+            'logout' => 'You have been logged out',
+            'not_verified' => 'Please verify your email',
+            'not_registered' => 'Please create an account',
             default => ''
         };
 

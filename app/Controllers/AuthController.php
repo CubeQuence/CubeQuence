@@ -83,6 +83,12 @@ class AuthController extends Controller
         }
 
         if (!$user->isAllowed()) {
+            if (!$user->isEmailVerified()) {
+                return Respond::redirect(
+                    url: '/?msg=not_verified'
+                );
+            }
+
             return Respond::redirect(
                 url: '/?msg=not_registered'
             );

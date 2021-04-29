@@ -81,12 +81,23 @@ class ExampleController extends Controller
             );
         }
 
-        $example = DB::get('example', ['string'], ['id' => $id]);
+        $example = DB::get(
+            table: 'example',
+            columns: ['user_id', 'string'],
+            where: ['id' => $id]
+        );
 
         if (!$example) {
             return Respond::prettyJson(
                 message: 'Example not found',
                 code: 404
+            );
+        }
+
+        if ($this->request->user->getId() !== $example['user_id']) {
+            return Respond::prettyJson(
+                message: 'You do not have access',
+                code: 403
             );
         }
 
@@ -113,6 +124,26 @@ class ExampleController extends Controller
      */
     public function delete(string $id): JsonResponse
     {
+        $example = DB::get(
+            table: 'example',
+            columns: ['user_id', 'string'],
+            where: ['id' => $id]
+        );
+
+        if (!$example) {
+            return Respond::prettyJson(
+                message: 'Example not found',
+                code: 404
+            );
+        }
+
+        if ($this->request->user->getId() !== $example['user_id']) {
+            return Respond::prettyJson(
+                message: 'You do not have access',
+                code: 403
+            );
+        }
+
         DB::delete(
             table: 'example',
             where: ['id' => $id]
