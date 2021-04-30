@@ -7,7 +7,7 @@
                 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-                <title>{{ code }} Error</title>
+                <title>500 Error</title>
 
                 <!-- Google font -->
                 <link
@@ -31,14 +31,16 @@
                 <div id="error">
                 <div class="error">
                     <div class="error-number">
-                    <h3>{{ error }}</h3>
-                    <h1>
-                        {% for number in code|split('') %}
-                            <span>{{ number }}</span>
-                        {% endfor %}
-                    </h1>
+                        <h3>Oops! Server error</h3>
+
+                        <h1>
+                            <span>5</span>
+                            <span>0</span>
+                            <span>0</span>
+                        </h1>
                     </div>
-                    <h2>{{ description }}</h2>
+
+                    <h2>We are experiencing some technical issues</h2>
                 </div>
                 </div>
             </body>

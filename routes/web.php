@@ -12,7 +12,6 @@ use CQ\Middleware\JsonMiddleware;
 use CQ\Middleware\RatelimitMiddleware;
 
 $route->get('/', [GeneralController::class, 'index']);
-$route->get('/error/{code}', [GeneralController::class, 'error']);
 
 $middleware->create(['prefix' => '/auth'], function () use ($route, $middleware) {
     $route->get('/request', [AuthController::class, 'request']);

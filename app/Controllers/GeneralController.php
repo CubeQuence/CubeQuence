@@ -33,33 +33,10 @@ class GeneralController extends Controller
         );
     }
 
-    /**
-     * Error screen.
-     */
-    public function error(string $code): HtmlResponse
+    public function upload()
     {
-        $error = match ($code) {
-            '403' => 'Oops! Access denied',
-            '404' => 'Oops! Page not found',
-            '500' => 'Oops! Server error',
-            default => 'Oops! Unknown Error'
-        };
-
-        $description = match ($code) {
-            '403' => 'Access to this page is forbidden',
-            '404' => 'The page you requested could not be found',
-            '500' => 'We are experiencing some technical issues',
-            default => 'Unknown error occured'
-        };
-
-        return Respond::twig(
-            view: 'error.twig',
-            parameters: [
-                'code' => $code,
-                'error' => $error,
-                'description' => $description,
-            ],
-            code: (int) $code
+        return Respond::prettyJson(
+            message: 'Upload Successfull'
         );
     }
 }

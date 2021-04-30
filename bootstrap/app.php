@@ -10,11 +10,7 @@ use CQ\Routing\Router;
 session_start();
 
 // Router
-$router = new Router(
-    route_404: '/error/404',
-    route_500: '/error/500'
-);
-
+$router = new Router();
 $route = $router->getRoute();
 $middleware = $router->getMiddleware();
 
