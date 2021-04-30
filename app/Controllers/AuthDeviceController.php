@@ -51,7 +51,7 @@ class AuthDeviceController extends Controller
         $startData = $this->client->start();
 
         SessionHelper::set(
-            name: 'oauth_device_code',
+            name: 'cq_oauth_device_code',
             data: $startData->device_code
         );
 
@@ -71,7 +71,7 @@ class AuthDeviceController extends Controller
         try {
             $tokens = $this->client->callback(
                 queryParams: $this->request->getQueryParams(),
-                storedVar: SessionHelper::get('oauth_device_code')
+                storedVar: SessionHelper::get('cq_oauth_device_code')
             );
         } catch (OAuthException $th) {
             if (!$th->getMessage()) {

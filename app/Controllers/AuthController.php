@@ -51,7 +51,7 @@ class AuthController extends Controller
         $startData = $this->client->start();
 
         SessionHelper::set(
-            name: 'oauth_state',
+            name: 'cq_oauth_state',
             data: $startData->state
         );
 
@@ -68,7 +68,7 @@ class AuthController extends Controller
         try {
             $tokens = $this->client->callback(
                 queryParams: $this->request->getQueryParams(),
-                storedVar: SessionHelper::get('oauth_state')
+                storedVar: SessionHelper::get('cq_oauth_state')
             );
 
             $user = $this->client->getUser(
