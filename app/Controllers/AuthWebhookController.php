@@ -6,15 +6,9 @@ namespace App\Controllers;
 
 use CQ\DB\DB;
 use CQ\Controllers\AuthWebhookController as CQAuthWebhookController;
-use CQ\Response\Respond;
 
 final class AuthWebhookController extends CQAuthWebhookController
 {
-    public function debug()
-    {
-        return Respond::prettyJson('hi');
-    }
-
     /**
      * Delete user webhook app specific
      */
