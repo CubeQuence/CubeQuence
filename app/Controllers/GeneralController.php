@@ -9,7 +9,7 @@ use CQ\Helpers\AuthHelper;
 use CQ\Response\HtmlResponse;
 use CQ\Response\Respond;
 
-class GeneralController extends Controller
+final class GeneralController extends Controller
 {
     /**
      * Index screen.
@@ -36,7 +36,8 @@ class GeneralController extends Controller
     public function upload()
     {
         return Respond::prettyJson(
-            message: 'Upload Successfull'
+            message: 'Upload Successful',
+            data: $_FILES
         );
     }
 }

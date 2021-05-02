@@ -8,7 +8,7 @@ use CQ\Controllers\Controller;
 use CQ\Response\HtmlResponse;
 use CQ\Response\Respond;
 
-class UserController extends Controller
+final class UserController extends Controller
 {
     /**
      * Dashboard screen.

@@ -12,7 +12,7 @@ use CQ\Helpers\UuidHelper;
 use CQ\Response\JsonResponse;
 use CQ\Response\Respond;
 
-class ExampleController extends Controller
+final class ExampleController extends Controller
 {
     /**
      * List entries.
