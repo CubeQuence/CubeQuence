@@ -608,16 +608,16 @@
         },
         {
             "name": "cubequence/framework",
-            "version": "v1.4",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CubeQuence/framework.git",
-                "reference": "e7a22de4bab7b205ac83b94bcf27a2cc8e6d5b25"
+                "reference": "9589f9576dd91e9686c472e6666e5e407e807f0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CubeQuence/framework/zipball/e7a22de4bab7b205ac83b94bcf27a2cc8e6d5b25",
-                "reference": "e7a22de4bab7b205ac83b94bcf27a2cc8e6d5b25",
+                "url": "https://api.github.com/repos/CubeQuence/framework/zipball/9589f9576dd91e9686c472e6666e5e407e807f0b",
+                "reference": "9589f9576dd91e9686c472e6666e5e407e807f0b",
                 "shasum": ""
             },
             "require": {
@@ -669,7 +669,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2021-05-02T16:35:20+00:00"
+            "time": "2021-05-02T16:55:43+00:00"
         },
         {
             "name": "cubequence/helpers",
