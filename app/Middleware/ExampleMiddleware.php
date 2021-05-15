@@ -7,12 +7,10 @@ namespace App\Middleware;
 use Closure;
 use CQ\Middleware\Middleware;
 
-class ExampleMiddleware extends Middleware
+final class ExampleMiddleware extends Middleware
 {
     /**
      * Custom actions.
-     *
-     * @return mixed
      */
     public function handleChild(Closure $next): Closure
     {

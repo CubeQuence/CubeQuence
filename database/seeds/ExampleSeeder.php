@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use CQ\DB\Seeder;
 
-class ExampleSeeder extends Seeder
+final class ExampleSeeder extends Seeder
 {
     /**
      * Run Method.

@@ -9,15 +9,10 @@ use App\Controllers\AuthWebhookController;
 use CQ\Controllers\AuthCodeController;
 use CQ\Controllers\AuthDeviceController;
 use CQ\Middleware\AuthMiddleware;
-use CQ\Middleware\FormMiddleware;
 use CQ\Middleware\JsonMiddleware;
 use CQ\Middleware\RatelimitMiddleware;
 
 $route->get('/', [GeneralController::class, 'index']);
-
-$middleware->create(['middleware' => [FormMiddleware::class]], function () use ($route, $middleware) {
-    $route->post('/upload', [GeneralController::class, 'upload']);
-});
 
 $middleware->create(['prefix' => '/auth'], function () use ($route, $middleware) {
     $route->get('/request', [AuthCodeController::class, 'request']);

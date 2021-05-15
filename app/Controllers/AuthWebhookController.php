@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
-use CQ\DB\DB;
 use CQ\Controllers\AuthWebhookController as CQAuthWebhookController;
+use CQ\DB\DB;
 
 final class AuthWebhookController extends CQAuthWebhookController
 {
@@ -17,7 +17,7 @@ final class AuthWebhookController extends CQAuthWebhookController
         DB::delete(
             table: 'example',
             where: [
-                'user_id' => $userId
+                'user_id' => $userId,
             ]
         );
     }

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use CQ\DB\Migration;
 
-class CreateExampleTable extends Migration
+final class CreateExampleTable extends Migration
 {
     /**
      * Change Method.
@@ -39,7 +39,6 @@ class CreateExampleTable extends Migration
             ->addColumn('string', 'string', ['limit' => 2048, 'null' => false])
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
-            ->create()
-        ;
+            ->create();
     }
 }

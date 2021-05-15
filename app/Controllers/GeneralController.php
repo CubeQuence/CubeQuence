@@ -32,12 +32,4 @@ final class GeneralController extends Controller
             ]
         );
     }
-
-    public function upload()
-    {
-        return Respond::prettyJson(
-            message: 'Upload Successful',
-            data: $_FILES
-        );
-    }
 }

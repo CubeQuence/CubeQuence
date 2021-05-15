@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use CQ\DB\Seeder;
 
-class RatelimitSeeder extends Seeder
+final class RatelimitSeeder extends Seeder
 {
     /**
      * Run Method.

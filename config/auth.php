@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 return [
-    'authorization_server' => 'https://auth.castelnuovo.xyz',
+    'authorization_server' => 'https://auth2.castelnuovo.xyz',
     'client_id' => env('AUTH_ID'),
     'client_secret' => env('AUTH_SECRET'),
     'session_timeout' => 900, // Seconds of inactivity before session expires

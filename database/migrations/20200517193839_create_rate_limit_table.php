@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use CQ\DB\Migration;
 
-class CreateRateLimitTable extends Migration
+final class CreateRateLimitTable extends Migration
 {
     /**
      * Change Method.
@@ -39,7 +39,6 @@ class CreateRateLimitTable extends Migration
             ->addColumn('reset_at', 'integer')
             ->addColumn('updated_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
             ->addColumn('created_at', 'datetime', ['default' => 'CURRENT_TIMESTAMP'])
-            ->create()
-        ;
+            ->create();
     }
 }
