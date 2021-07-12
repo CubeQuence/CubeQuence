@@ -383,16 +383,16 @@
         },
         {
             "name": "catfan/medoo",
-            "version": "v2.0.1",
+            "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/catfan/Medoo.git",
-                "reference": "2d0345be643e67f8d43acb282bf9a882e8e9971a"
+                "reference": "dbf65e46813f7f4f63940c1fd8ff6d4091449d5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/catfan/Medoo/zipball/2d0345be643e67f8d43acb282bf9a882e8e9971a",
-                "reference": "2d0345be643e67f8d43acb282bf9a882e8e9971a",
+                "url": "https://api.github.com/repos/catfan/Medoo/zipball/dbf65e46813f7f4f63940c1fd8ff6d4091449d5d",
+                "reference": "dbf65e46813f7f4f63940c1fd8ff6d4091449d5d",
                 "shasum": ""
             },
             "require": {
@@ -451,7 +451,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2021-05-12T17:55:47+00:00"
+            "time": "2021-07-09T05:26:24+00:00"
         },
         {
             "name": "cubequence/crypto",
