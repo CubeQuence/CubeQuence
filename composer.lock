@@ -1954,16 +1954,16 @@
         },
         {
             "name": "miladrahimi/phprouter",
-            "version": "v5.1.0",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/miladrahimi/phprouter.git",
-                "reference": "26d77f43492fa664c097d53fa85e801cf099068b"
+                "reference": "676cda605726e234984f97798165b56c2a37da9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/miladrahimi/phprouter/zipball/26d77f43492fa664c097d53fa85e801cf099068b",
-                "reference": "26d77f43492fa664c097d53fa85e801cf099068b",
+                "url": "https://api.github.com/repos/miladrahimi/phprouter/zipball/676cda605726e234984f97798165b56c2a37da9b",
+                "reference": "676cda605726e234984f97798165b56c2a37da9b",
                 "shasum": ""
             },
             "require": {
@@ -2010,7 +2010,13 @@
                 "issues": "https://github.com/miladrahimi/phprouter/issues",
                 "source": "https://github.com/miladrahimi/phprouter/issues"
             },
-            "time": "2021-02-07T13:16:23+00:00"
+            "funding": [
+                {
+                    "url": "https://miladrahimi.com/pay.html",
+                    "type": "custom"
+                }
+            ],
+            "time": "2021-12-20T20:27:45+00:00"
         },
         {
             "name": "mnapoli/silly",
